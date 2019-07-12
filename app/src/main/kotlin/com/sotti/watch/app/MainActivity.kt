@@ -1,4 +1,4 @@
-package com.sotti.watch
+package com.sotti.watch.app
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.sotti.watch.R
 
 internal class MainActivity : AppCompatActivity() {
 
@@ -22,8 +23,8 @@ internal class MainActivity : AppCompatActivity() {
                 navController = navController,
                 configuration = AppBarConfiguration(
                     setOf(
-                        R.id.navigation_explore,
-                        R.id.navigation_about
+                        R.id.nav_destination_explore,
+                        R.id.nav_destination_about
                     )
                 )
             )

@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_explore"
+        android:id="@+id/nav_destination_explore"
         android:icon="@drawable/ic_outline_explore_24dp"
-        android:title="@string/bottom_nav_title_explore" />
+        android:title="@string/explore_bottom_nav_title" />
 
     <item
-        android:id="@+id/navigation_about"
+        android:id="@+id/nav_destination_about"
         android:icon="@drawable/ic_outline_account_circle_24dp"
-        android:title="@string/bottom_nav_title_about" />
+        android:title="@string/about_bottom_nav_title" />
 </menu>

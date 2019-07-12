@@ -1,8 +1,8 @@
 <resources>
-    <string name="bottom_nav_title_about">About Me</string>
-    <string name="github_handle">Sottti</string>
-    <string name="stackoverflow_handle">Sotti</string>
-    <string name="medium_handle">Pablo Costa</string>
-    <string name="twitter_handle">\@sotttti</string>
-    <string name="linkedin_handle">\Pablo Costa</string>
+    <string name="about_github_handle">Sottti</string>
+    <string name="about_twitter_handle">\@sotttti</string>
+    <string name="about_stackoverflow_handle">Sotti</string>
+    <string name="about_medium_handle">Pablo Costa</string>
+    <string name="about_linkedin_handle">\Pablo Costa</string>
+    <string name="about_bottom_nav_title">About Me</string>
 </resources>

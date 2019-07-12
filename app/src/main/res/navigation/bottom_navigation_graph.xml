@@ -2,19 +2,19 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bottom__navigation"
-    app:startDestination="@+id/navigation_explore">
+    android:id="@+id/bottom_navigation_graph"
+    app:startDestination="@+id/nav_destination_explore">
 
     <fragment
-        android:id="@+id/navigation_explore"
+        android:id="@+id/nav_destination_explore"
         android:name="com.sotti.explore.view.ExploreFragment"
-        android:label="@string/bottom_nav_title_explore"
+        android:label="@string/explore_bottom_nav_title"
         tools:layout="@layout/explore_fragment" />
 
     <fragment
-        android:id="@+id/navigation_about"
+        android:id="@+id/nav_destination_about"
         android:name="com.sotti.about.view.AboutFragment"
-        android:label="@string/bottom_nav_title_about"
+        android:label="@string/about_bottom_nav_title"
         tools:layout="@layout/about_fragment" />
 
 </navigation>

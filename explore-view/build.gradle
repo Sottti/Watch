@@ -7,4 +7,6 @@ dependencies {
     implementation deps.google.android.x.ui.fragment
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.foundation.appCompat
+
+    implementation project(':resources-common')
 }

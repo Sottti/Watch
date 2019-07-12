@@ -27,4 +27,11 @@
 
     <dimen name="list_with_image__image_width">100dp</dimen>
     <dimen name="list_with_image__image_height">@dimen/spacing_56</dimen>
+
+    <!--Icons-->
+    <dimen name="ic_small">18dp</dimen>
+    <dimen name="ic_medium">24dp</dimen>
+    <dimen name="ic_large">36dp</dimen>
+    <dimen name="ic_xlarge">48dp</dimen>
+
 </resources>
