@@ -8,7 +8,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/about-view" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/explore-view" />
+            <option value="$PROJECT_DIR$/intents" />
+            <option value="$PROJECT_DIR$/resources-common" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

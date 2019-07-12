@@ -1,0 +1,220 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ClickHandler"
+            type="com.sotti.about.view.AboutFragment.AboutClickHandler" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/about_fragment_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/github"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touch_target_min_height"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{ClickHandler::onGithubClick}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/twitter">
+
+            <ImageView
+                android:id="@+id/github_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_github_24dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/github_text"
+                style="@style/Body1.Black.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                android:layout_marginLeft="@dimen/vertical_keyline_primary"
+                android:layout_marginEnd="@dimen/vertical_keyline_primary"
+                android:layout_marginRight="@dimen/vertical_keyline_primary"
+                android:text="@string/github_handle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/github_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stackoverflow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touch_target_min_height"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{ClickHandler::onStackOverflowClick}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/twitter">
+
+            <ImageView
+                android:id="@+id/stackoverflow_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_stackoverflow_24dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/stackoverflow_text"
+                style="@style/Body1.Black.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                android:layout_marginLeft="@dimen/vertical_keyline_primary"
+                android:layout_marginEnd="@dimen/vertical_keyline_primary"
+                android:layout_marginRight="@dimen/vertical_keyline_primary"
+                android:text="@string/stackoverflow_handle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/stackoverflow_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touch_target_min_height"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{ClickHandler::onMediumClick}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/twitter">
+
+            <ImageView
+                android:id="@+id/medium_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_medium_24dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/medium_text"
+                style="@style/Body1.Black.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                android:layout_marginLeft="@dimen/vertical_keyline_primary"
+                android:layout_marginEnd="@dimen/vertical_keyline_primary"
+                android:layout_marginRight="@dimen/vertical_keyline_primary"
+                android:text="@string/medium_handle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/medium_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/twitter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touch_target_min_height"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{ClickHandler::onTwitterClick}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medium">
+
+            <ImageView
+                android:id="@+id/twitter_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                android:tint="@color/twitter_primary_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_twitter_logo_24dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/twitter_text"
+                style="@style/Body1.Black.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                android:layout_marginLeft="@dimen/vertical_keyline_primary"
+                android:layout_marginEnd="@dimen/vertical_keyline_primary"
+                android:layout_marginRight="@dimen/vertical_keyline_primary"
+                android:text="@string/twitter_handle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/twitter_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linkedin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touch_target_min_height"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{ClickHandler::onLinkedInClick}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/twitter">
+
+            <ImageView
+                android:id="@+id/linkedin_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_linkedin_24dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/linkedin_text"
+                style="@style/Body1.Black.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                android:layout_marginLeft="@dimen/vertical_keyline_primary"
+                android:layout_marginEnd="@dimen/vertical_keyline_primary"
+                android:layout_marginRight="@dimen/vertical_keyline_primary"
+                android:text="@string/linkedin_handle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/linkedin_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

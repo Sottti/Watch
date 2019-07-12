@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--- Headline 1 -->
+    <style name="Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Headline1.White" />
+
+    <style name="Headline1.Black" />
+
+    <style name="Headline1.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Headline1.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Headline1.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <!--- Headline 2 -->
+    <style name="Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Headline2.White" />
+
+    <style name="Headline2.Black" />
+
+    <style name="Headline2.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Headline2.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Headline2.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <!--- Headline 3 -->
+    <style name="Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Headline3.White" />
+
+    <style name="Headline3.Black" />
+
+    <style name="Headline3.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Headline3.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Headline3.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <!--- Headline 4 -->
+    <style name="Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Headline4.White" />
+
+    <style name="Headline4.Black" />
+
+    <style name="Headline4.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Headline4.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Headline4.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <!--- Headline 5 -->
+    <style name="Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Headline5.White" />
+
+    <style name="Headline5.Black" />
+
+    <style name="Headline5.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Headline5.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Headline5.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <!--- Headline 6 -->
+    <style name="Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Headline6.White" />
+
+    <style name="Headline6.Black" />
+
+    <style name="Headline6.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Headline6.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Headline6.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <!--- SubTitle 1 -->
+    <style name="Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Subtitle1.Black" />
+
+    <style name="Subtitle1.White" />
+
+    <style name="Subtitle1.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Subtitle1.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Subtitle1.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <style name="Subtitle1.White.Secondary">
+        <item name="android:textColor">@color/text_white_medium_emphasis</item>
+    </style>
+
+    <!--- SubTitle 2 -->
+    <style name="Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Subtitle2.Black" />
+
+    <style name="Subtitle2.White" />
+
+    <style name="Subtitle2.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Subtitle2.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Subtitle2.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <style name="Subtitle2.White.Secondary">
+        <item name="android:textColor">@color/text_white_medium_emphasis</item>
+    </style>
+
+    <!--- Body 1 -->
+    <style name="Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Body1.Black" />
+
+    <style name="Body1.White" />
+
+    <style name="Body1.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Body1.White.Secondary">
+        <item name="android:textColor">@color/text_white_medium_emphasis</item>
+    </style>
+
+    <style name="Body1.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Body1.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <style name="Body1.Black.Tertiary">
+        <item name="android:textColor">@color/text_black_disable</item>
+    </style>
+
+    <!--- Body 2 -->
+    <style name="Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Body2.Black" />
+
+    <style name="Body2.White" />
+
+    <style name="Body2.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Body2.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Body2.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <style name="Body2.Black.Tertiary">
+        <item name="android:textColor">@color/text_black_disable</item>
+    </style>
+
+    <style name="Body2.White.Secondary">
+        <item name="android:textColor">@color/text_white_medium_emphasis</item>
+    </style>
+
+    <!--- Caption -->
+    <style name="Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Caption.Black" />
+
+    <style name="Caption.White" />
+
+    <style name="Caption.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Caption.White.Secondary">
+        <item name="android:textColor">@color/text_white_medium_emphasis</item>
+    </style>
+
+    <style name="Caption.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Caption.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <style name="Caption.Black.Tertiary">
+        <item name="android:textColor">@color/text_black_disable</item>
+    </style>
+
+    <!--Overline-->
+    <style name="Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Overline.Black" />
+
+    <style name="Overline.White" />
+
+    <style name="Overline.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+    <style name="Overline.Black.Secondary">
+        <item name="android:textColor">@color/text_black_medium_emphasis</item>
+    </style>
+
+    <style name="Overline.White.Primary">
+        <item name="android:textColor">@color/text_white_high_emphasis</item>
+    </style>
+
+    <style name="Overline.White.Secondary">
+        <item name="android:textColor">@color/text_white_medium_emphasis</item>
+    </style>
+
+    <!--Button-->
+    <style name="Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Button.Black" />
+
+    <style name="Button.White" />
+
+    <style name="Button.Black.Primary">
+        <item name="android:textColor">@color/text_black_high_emphasis</item>
+    </style>
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- Dark text on light backgrounds -->
+    <color name="text_black">@color/black</color>
+    <color name="text_black_high_emphasis">@color/black_87</color>
+    <color name="text_black_medium_emphasis">@color/black_60</color>
+    <color name="text_black_hint">@color/black_60</color>
+    <color name="text_black_helper">@color/black_60</color>
+    <color name="text_black_disable">@color/black_38</color>
+
+    <!-- Light text on dark backgrounds -->
+    <color name="text_white_high_emphasis">@color/white</color>
+    <color name="text_white_medium_emphasis">@color/white_70</color>
+    <color name="text_white_hint">@color/white_50</color>
+    <color name="text_white_disabled">@color/white_50</color>
+
+    <!--Other texts-->
+    <color name="text_error">#B00020</color>
+
+    <!--Dividers-->
+    <color name="divider_black">@color/black_12</color>
+    <color name="divider_white">@color/white_12</color>
+
+    <!--Icons and other symbols-->
+    <color name="icon_black_active_focused">@color/black_87</color>
+    <color name="icon_black_active_unfocused">@color/black_54</color>
+    <color name="icon_black_inactive">@color/black_38</color>
+
+    <color name="icon_white_active_focused">@color/white</color>
+    <color name="icon_white_active_unfocused">@color/white_70</color>
+    <color name="icon_white_inactive">@color/white_50</color>
+
+    <!--Common-->
+    <color name="black_87">#DE000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_54">#8C000000</color>
+    <color name="black_38">#61000000</color>
+    <color name="black_12">#1F000000</color>
+    <color name="black_6">#10000000</color>
+
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_12">#1FFFFFFF</color>
+
+    <color name="black_32">#52000000</color>
+    <color name="black_20">#33000000</color>
+
+    <color name="black">#000</color>
+    <color name="white">#FFF</color>
+
+    <!--Other-->
+    <color name="scrim">@color/black_32</color>
+</resources>

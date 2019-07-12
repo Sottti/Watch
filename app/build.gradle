@@ -27,6 +27,10 @@ android {
 }
 
 dependencies {
+
+    implementation deps.koin.android
+    implementation deps.squareup.leakCanary.runtime
+
     implementation deps.google.android.x.ui.material
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.foundation.appCompat
@@ -34,7 +38,7 @@ dependencies {
     implementation deps.google.android.x.architecture.navigation.runtime
     implementation deps.google.android.x.architecture.navigation.fragment
 
-    implementation deps.koin.android
-
-    implementation deps.squareup.leakCanary.runtime
+    implementation project(':about-view')
+    implementation project(':explore-view')
+    implementation project(':resources-common')
 }

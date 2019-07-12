@@ -1,0 +1,13 @@
+apply plugin: 'com.android.library'
+apply from: '../scripts/android_library_module.gradle'
+apply from: '../scripts/android_test_dependencies.gradle'
+apply from: '../scripts/build_types.gradle'
+
+dependencies {
+    implementation deps.google.android.x.ui.fragment
+    implementation deps.google.android.x.ui.constraintLayout
+    implementation deps.google.android.x.foundation.appCompat
+
+    implementation project(':intents')
+    implementation project(':resources-common')
+}
