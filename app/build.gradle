@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+apply from: '../scripts/android_library_module.gradle'
+apply from: '../scripts/android_test_dependencies.gradle'
+apply from: '../scripts/build_types.gradle'
+
+buildscript {
+    ext.buildConfig = [
+            'version': [
+                    'major': 1,
+                    'minor': 0,
+                    'patch': 0,
+                    'build': 0
+            ]
+    ]
+
+    ext.buildConfig.version['fullName'] = "${buildConfig.version.name}.${buildConfig.version.build}"
+    ext.buildConfig.version['name'] = "${buildConfig.version.major}.${buildConfig.version.minor}.${buildConfig.version.patch}"
+    ext.buildConfig.version['code'] = buildConfig.version.major * 10000 + buildConfig.version.minor * 1000 + buildConfig.version.patch * 100 + buildConfig.version.build
+}
+
+android {
+    defaultConfig {
+        applicationId "com.sotti.watch"
+        versionName buildConfig.version.name
+        versionCode buildConfig.version.code
+    }
+}
+
+dependencies {
+    implementation deps.google.android.x.ui.material
+    implementation deps.google.android.x.ui.constraintLayout
+    implementation deps.google.android.x.foundation.appCompat
+    implementation deps.google.android.x.architecture.navigation.ui
+    implementation deps.google.android.x.architecture.navigation.runtime
+    implementation deps.google.android.x.architecture.navigation.fragment
+
+    implementation deps.koin.android
+
+    implementation deps.squareup.leakCanary.runtime
+}

@@ -1,0 +1,9 @@
+dependencies {
+    androidTestImplementation deps.google.android.x.foundation.test.espresso.core
+    androidTestImplementation deps.google.android.x.foundation.test.espresso.contrib
+    androidTestImplementation deps.google.android.x.foundation.test.espresso.idlingResource
+    androidTestImplementation deps.google.android.x.foundation.test.espresso.intents
+    androidTestImplementation deps.google.android.x.foundation.test.rules
+    androidTestImplementation deps.google.android.x.foundation.test.runner
+    androidTestImplementation deps.google.android.x.foundation.test.junit
+}

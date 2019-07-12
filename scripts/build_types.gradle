@@ -1,0 +1,25 @@
+android {
+    buildTypes {
+        release
+                {
+                    debuggable false
+                    minifyEnabled true
+                }
+
+        debug
+                {
+                    debuggable true
+                    minifyEnabled false
+                }
+    }
+
+    flavorDimensions "default"
+
+    productFlavors
+            {
+                live
+                        {
+                            dimension "default"
+                        }
+            }
+}

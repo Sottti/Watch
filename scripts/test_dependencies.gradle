@@ -1,0 +1,13 @@
+android {
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    testImplementation deps.test.junit
+    testImplementation deps.test.hamcrest
+    testImplementation deps.test.mockito.core
+
+    testImplementation deps.kotlin.x.coroutines.test
+}
