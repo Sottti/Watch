@@ -1,4 +1,4 @@
-package com.sotti.intents
+package com.sotti.watch.intents
 
 import android.content.Intent
 import android.net.Uri

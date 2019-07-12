@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_destination_explore"
-        android:name="com.sotti.explore.view.ExploreFragment"
+        android:name="com.sotti.watch.explore.view.ExploreFragment"
         android:label="@string/explore_bottom_nav_title"
         tools:layout="@layout/explore_fragment" />
 
     <fragment
         android:id="@+id/nav_destination_about"
-        android:name="com.sotti.about.view.AboutFragment"
+        android:name="com.sotti.watch.about.view.AboutFragment"
         android:label="@string/about_bottom_nav_title"
         tools:layout="@layout/about_fragment" />
 

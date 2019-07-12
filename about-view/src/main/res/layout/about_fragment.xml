@@ -6,7 +6,7 @@
 
         <variable
             name="ClickHandler"
-            type="com.sotti.about.view.AboutFragment.AboutClickHandler" />
+            type="com.sotti.watch.about.view.AboutFragment.AboutClickHandler" />
     </data>
 
     <LinearLayout

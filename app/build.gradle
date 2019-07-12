@@ -20,7 +20,7 @@ buildscript {
 
 android {
     defaultConfig {
-        applicationId "com.sotti.watch"
+        applicationId "com.sotti.watch.app"
         versionName buildConfig.version.name
         versionCode buildConfig.version.code
     }

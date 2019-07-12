@@ -1,4 +1,4 @@
-package com.sotti.about.view
+package com.sotti.watch.about.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.sotti.about.view.databinding.AboutFragmentBinding
-import com.sotti.intents.loadChromeCustomTab
+import com.sotti.watch.about.view.databinding.AboutFragmentBinding
+import com.sotti.watch.intents.loadChromeCustomTab
 
 internal class AboutFragment : Fragment() {
 

@@ -7,7 +7,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.sotti.watch.R
 
 internal class MainActivity : AppCompatActivity() {
 
@@ -28,7 +27,7 @@ internal class MainActivity : AppCompatActivity() {
                     )
                 )
             )
-            findViewById<BottomNavigationView>(R.id.nav_view).apply {
+            findViewById<BottomNavigationView>(R.id.bottom_nav_view).apply {
                 setupWithNavController(navController)
                 setOnNavigationItemReselectedListener { }
             }
