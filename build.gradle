@@ -106,7 +106,7 @@ buildscript {
             ],
             'test'       : [
                     'mockito': [
-                            core: "org.mockito:mockito-core:2.28.2",
+                            core: "org.mockito:mockito-core:3.0.0",
                     ],
                     junit    : "junit:junit:4.13-beta-3",
                     hamcrest : "org.hamcrest:hamcrest:2.1",
