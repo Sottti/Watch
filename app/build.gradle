@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
+apply from: '../scripts/build_types.gradle'
 apply from: '../scripts/android_library_module.gradle'
 apply from: '../scripts/android_test_dependencies.gradle'
-apply from: '../scripts/build_types.gradle'
 
 buildscript {
     ext.buildConfig = [
