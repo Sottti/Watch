@@ -24,7 +24,7 @@ buildscript {
     ]
 
     ext.deps = [
-            'kotlin'     : [
+            'kotlin'         : [
                     'x'     : [
                             'coroutines': [
                                     'core'   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.versions.kotlin.coroutines",
@@ -36,7 +36,7 @@ buildscript {
                             jdk8: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.ext.versions.kotlin.stdlib"
                     ]
             ],
-            'google'     : [
+            'google'         : [
                     'android': [
                             'x': [
                                     'foundation'  : [
@@ -88,7 +88,7 @@ buildscript {
                             ],
                     ],
             ],
-            'squareup'   : [
+            'squareup'       : [
                     'okhttp'    : [
                             loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.versions.okhttp"
                     ],
@@ -100,20 +100,21 @@ buildscript {
                             runtime: "com.squareup.leakcanary:leakcanary-android:$rootProject.ext.versions.leakCanary"
                     ]
             ],
-            'koin'       : [
+            'koin'           : [
                     'android'  : "org.koin:koin-android:$rootProject.ext.versions.koin",
                     'viewModel': "org.koin:koin-androidx-viewmodel:$rootProject.ext.versions.koin",
             ],
-            'test'       : [
+            'test'           : [
                     'mockito': [
                             core: "org.mockito:mockito-core:3.0.0",
                     ],
                     junit    : "junit:junit:4.13-beta-3",
                     hamcrest : "org.hamcrest:hamcrest:2.1",
             ],
-            'jakewharton': [
+            'jakewharton'    : [
                     timber: "com.jakewharton.timber:timber:4.7.1"
-            ]
+            ],
+            'circleImageView': "de.hdodenhof:circleimageview:3.0.0"
     ]
     repositories {
         google()

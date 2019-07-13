@@ -20,33 +20,21 @@ internal class AboutFragment : Fragment() {
     ): View? {
         viewBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.about_fragment, container, false
+            R.layout.about_fragment,
+            container,
+            false
         )
-        viewBinding.clickHandler = AboutClickHandler()
+        setClickListeners()
         return viewBinding.root
     }
 
-    @Suppress("UNUSED_PARAMETER")
-    inner class AboutClickHandler {
-
-        fun onGithubClick(view: View) {
-            loadChromeCustomTab("https://github.com/Sottti")
-        }
-
-        fun onStackOverflowClick(view: View) {
-            loadChromeCustomTab("https://stackoverflow.com/users/1177959/sotti")
-        }
-
-        fun onMediumClick(view: View) {
-            loadChromeCustomTab("https://medium.com/@sotti")
-        }
-
-        fun onTwitterClick(view: View) {
-            loadChromeCustomTab("https://twitter.com/Sotttti")
-        }
-
-        fun onLinkedInClick(view: View) {
-            loadChromeCustomTab("https://uk.linkedin.com/in/sotti")
+    private fun setClickListeners() {
+        with(viewBinding) {
+            github.setOnClickListener { loadChromeCustomTab("https://github.com/Sottti") }
+            medium.setOnClickListener { loadChromeCustomTab("https://medium.com/@sotti") }
+            twitter.setOnClickListener { loadChromeCustomTab("https://twitter.com/Sotttti") }
+            linkedin.setOnClickListener { loadChromeCustomTab("https://uk.linkedin.com/in/sotti") }
+            stackoverflow.setOnClickListener { loadChromeCustomTab("https://stackoverflow.com/users/1177959/sotti") }
         }
     }
 }

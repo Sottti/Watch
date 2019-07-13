@@ -2,6 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/touch_target"
         android:layout_width="match_parent"
         android:layout_height="@dimen/one_line_row_list__with_icon__height"
         android:background="?selectableItemBackground"
@@ -33,4 +34,5 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

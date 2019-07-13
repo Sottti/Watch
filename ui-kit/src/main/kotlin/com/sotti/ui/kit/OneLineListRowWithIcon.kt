@@ -8,11 +8,16 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.withStyledAttributes
 
+
 class OneLineListRowWithIcon @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
+
+    private val touchTarget: ConstraintLayout by lazy {
+        findViewById<ConstraintLayout>(R.id.touch_target)
+    }
 
     private val icon: ImageView by lazy {
         findViewById<ImageView>(R.id.icon)
@@ -38,5 +43,9 @@ class OneLineListRowWithIcon @JvmOverloads constructor(
             text.text = getString(R.styleable.oneLineListRowWithIcon_ollrwi_text)
                 ?: resources.getString(R.string.one_line_list_row)
         }
+    }
+
+    fun setOnClickListener(listener: () -> Unit) {
+        touchTarget.setOnClickListener { listener.invoke() }
     }
 }

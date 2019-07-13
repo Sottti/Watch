@@ -1,23 +1,66 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-        <variable
-            name="clickHandler"
-            type="com.sotti.watch.about.view.AboutFragment.AboutClickHandler" />
-    </data>
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/about_fragment_root"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/cover_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cover_image"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/scrim"
+            app:layout_constraintBottom_toBottomOf="@id/cover_image"
+            app:layout_constraintEnd_toEndOf="@id/cover_image"
+            app:layout_constraintStart_toStartOf="@id/cover_image"
+            app:layout_constraintTop_toTopOf="@id/cover_image" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/cover_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cover_image">
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="2dp"
+            android:src="@drawable/profile_image"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1dp"
+            app:layout_constraintBottom_toTopOf="@id/card"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/card"
+            app:layout_constraintStart_toStartOf="@id/card"
+            app:layout_constraintTop_toTopOf="@id/card"
+            app:layout_constraintWidth_percent="0.25" />
 
         <com.sotti.ui.kit.OneLineListRowWithIcon
             android:id="@+id/github"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card"
             app:ollrwi_icon="@drawable/ic_github_24dp"
             app:ollrwi_text="@string/about_github_handle" />
 
@@ -25,6 +68,9 @@
             android:id="@+id/stackoverflow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/github"
             app:ollrwi_icon="@drawable/ic_stackoverflow_24dp"
             app:ollrwi_text="@string/about_stackoverflow_handle" />
 
@@ -32,6 +78,9 @@
             android:id="@+id/medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stackoverflow"
             app:ollrwi_icon="@drawable/ic_medium_24dp"
             app:ollrwi_text="@string/about_medium_handle" />
 
@@ -39,6 +88,9 @@
             android:id="@+id/twitter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medium"
             app:ollrwi_icon="@drawable/ic_twitter_logo_24dp"
             app:ollrwi_text="@string/about_twitter_handle" />
 
@@ -46,9 +98,12 @@
             android:id="@+id/linkedin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/twitter"
             app:ollrwi_icon="@drawable/ic_linkedin_24dp"
             app:ollrwi_text="@string/about_linkedin_handle" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
