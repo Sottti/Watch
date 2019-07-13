@@ -73,7 +73,7 @@ buildscript {
                                     ],
                                     'ui'          : [
                                             customTabs        : "androidx.browser:browser:1.0.0",
-                                            fragment          : "androidx.fragment:fragment-ktx:1.1.0-beta01",
+                                            fragment          : "androidx.fragment:fragment-ktx:1.2.0-alpha01",
                                             cardView          : "androidx.cardview:cardview:1.0.0",
                                             material          : "com.google.android.material:material:1.1.0-alpha08",
                                             recyclerView      : "androidx.recyclerview:recyclerview:1.1.0-alpha06",
