@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
+    android:width="@dimen/ic_medium"
+    android:height="@dimen/ic_medium"
     android:viewportWidth="24"
     android:viewportHeight="24">
 
     <path
-        android:fillColor="@color/white"
+        android:fillColor="@color/twitter_primary_blue"
         android:pathData="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32
 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4
 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38

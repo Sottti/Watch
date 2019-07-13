@@ -9,5 +9,5 @@ dependencies {
     implementation deps.google.android.x.foundation.appCompat
 
     implementation project(':intents')
-    implementation project(':resources-common')
+    implementation project(':ui-kit')
 }

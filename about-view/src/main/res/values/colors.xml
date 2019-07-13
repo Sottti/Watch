@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="twitter_primary_blue">#1DA1F2</color>
+    <color name="github_black">#181616</color>
+    <color name="linkedin_blue">#0083be</color>
+    <color name="stack_overflow_grey">#BCBBBB</color>
+    <color name="stack_overflow_orange">#F38126</color>
 </resources>

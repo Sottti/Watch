@@ -8,5 +8,5 @@ dependencies {
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.foundation.appCompat
 
-    implementation project(':resources-common')
+    implementation project(':ui-kit')
 }

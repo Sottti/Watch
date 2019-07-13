@@ -4,6 +4,7 @@
     <!--ProgressBar-->
     <dimen name="progress_bar_medium">48dp</dimen>
 
+    <!--General Spacing-->
     <dimen name="spacing_8">8dp</dimen>
     <dimen name="spacing_16">16dp</dimen>
     <dimen name="spacing_20">20dp</dimen>
@@ -20,18 +21,19 @@
 
     <dimen name="corner_radius_very_large">16dp</dimen>
 
-    <dimen name="list_three_lines__height">88dp</dimen>
-    <dimen name="list_three_lines_with_image__margin_top">@dimen/spacing_16</dimen>
-    <dimen name="list_three_lines_with_image__margin_bottom">@dimen/spacing_16</dimen>
-    <dimen name="list_three_lines_with_image__text_margin_start">@dimen/spacing_20</dimen>
-
-    <dimen name="list_with_image__image_width">100dp</dimen>
-    <dimen name="list_with_image__image_height">@dimen/spacing_56</dimen>
-
     <!--Icons-->
     <dimen name="ic_small">18dp</dimen>
     <dimen name="ic_medium">24dp</dimen>
     <dimen name="ic_large">36dp</dimen>
     <dimen name="ic_xlarge">48dp</dimen>
+
+
+
+    <!--Lists-->
+    <dimen name="one_line_row_list__with_icon__height">56dp</dimen>
+    <dimen name="one_line_row_list__margin_start">16dp</dimen>
+    <dimen name="one_line_row_list__margin_end">16dp</dimen>
+    <dimen name="one_line_row_list__text_margin_start">32dp</dimen>
+
 
 </resources>

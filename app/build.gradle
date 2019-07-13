@@ -40,5 +40,5 @@ dependencies {
 
     implementation project(':about-view')
     implementation project(':explore-view')
-    implementation project(':resources-common')
+    implementation project(':ui-kit')
 }
