@@ -9,6 +9,7 @@
             android:id="@+id/start_half"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:clipChildren="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/end_half"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,89 +36,99 @@
                 app:layout_constraintStart_toStartOf="@id/cover_image"
                 app:layout_constraintTop_toTopOf="@id/cover_image" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:contentDescription="@string/image_desc_profile_image"
-                android:src="@drawable/profile_image"
-                app:civ_border_color="@color/white"
-                app:civ_border_width="2dp"
+                android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.25"
-                app:layout_constraintWidth_percent="0.25" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/name"
-                style="@style/Headline5.Black.Primary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_16"
-                android:layout_marginTop="@dimen/spacing_8"
-                android:layout_marginEnd="@dimen/spacing_16"
-                android:gravity="center_horizontal"
-                android:text="@string/name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/profile_image" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/image_desc_profile_image"
+                    android:src="@drawable/profile_image"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.25"
+                    app:layout_constraintWidth_percent="0.25" />
 
-            <TextView
-                android:id="@+id/ocuppation"
-                style="@style/Body2.Black.Secondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_16"
-                android:layout_marginEnd="@dimen/spacing_16"
-                android:text="@string/occupation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name" />
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/Headline5.Black.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:gravity="center_horizontal"
+                    android:text="@string/name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_image" />
 
-            <TextView
-                android:id="@+id/location"
-                style="@style/Caption.Black.Tertiary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_16"
-                android:layout_marginEnd="@dimen/spacing_16"
-                android:text="@string/location"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ocuppation" />
+                <TextView
+                    android:id="@+id/ocuppation"
+                    style="@style/Body2.Black.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:text="@string/occupation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name" />
 
-            <Space
-                android:id="@+id/profile_image_center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@id/profile_image"
-                app:layout_constraintEnd_toEndOf="@id/profile_image"
-                app:layout_constraintStart_toStartOf="@id/profile_image"
-                app:layout_constraintTop_toTopOf="@id/profile_image" />
+                <TextView
+                    android:id="@+id/location"
+                    style="@style/Caption.Black.Tertiary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:text="@string/location"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ocuppation" />
 
-            <Space
-                android:id="@+id/card_bottom_reference"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_16"
-                app:layout_constraintEnd_toEndOf="@id/profile_image"
-                app:layout_constraintStart_toStartOf="@id/profile_image"
-                app:layout_constraintTop_toBottomOf="@id/location" />
+                <Space
+                    android:id="@+id/profile_image_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/profile_image"
+                    app:layout_constraintEnd_toEndOf="@id/profile_image"
+                    app:layout_constraintStart_toStartOf="@id/profile_image"
+                    app:layout_constraintTop_toTopOf="@id/profile_image" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card"
-                style="@style/Widget.MaterialComponents.CardView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="@dimen/vertical_keyline_primary"
-                android:layout_marginEnd="@dimen/vertical_keyline_primary"
-                app:layout_constraintBottom_toBottomOf="@id/card_bottom_reference"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/profile_image_center" />
+                <Space
+                    android:id="@+id/card_bottom_reference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_16"
+                    app:layout_constraintEnd_toEndOf="@id/profile_image"
+                    app:layout_constraintStart_toStartOf="@id/profile_image"
+                    app:layout_constraintTop_toBottomOf="@id/location" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card"
+                    style="@style/Widget.MaterialComponents.CardView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/vertical_keyline_primary"
+                    android:layout_marginEnd="@dimen/vertical_keyline_primary"
+                    android:elevation="24dp"
+                    app:layout_constraintBottom_toBottomOf="@id/card_bottom_reference"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/profile_image_center" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
