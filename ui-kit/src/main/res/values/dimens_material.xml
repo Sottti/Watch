@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--ProgressBar-->
-    <dimen name="progress_bar_medium">48dp</dimen>
-
     <!--General Spacing-->
     <dimen name="spacing_8">8dp</dimen>
     <dimen name="spacing_16">16dp</dimen>
-    <dimen name="spacing_20">20dp</dimen>
-    <dimen name="spacing_56">56dp</dimen>
+    <dimen name="spacing_192">192dp</dimen>
 
     <dimen name="list_vertical_padding">8dp</dimen>
-    <dimen name="subheader_list_tile_height">48dp</dimen>
 
     <dimen name="vertical_keyline_primary">16dp</dimen>
-
-    <dimen name="touch_target_min_height">48dp</dimen>
-
-    <dimen name="divider">1dp</dimen>
-
-    <dimen name="corner_radius_very_large">16dp</dimen>
 
     <!--Icons-->
     <dimen name="ic_small">18dp</dimen>
@@ -27,13 +16,10 @@
     <dimen name="ic_large">36dp</dimen>
     <dimen name="ic_xlarge">48dp</dimen>
 
-
-
     <!--Lists-->
     <dimen name="one_line_row_list__with_icon__height">56dp</dimen>
     <dimen name="one_line_row_list__margin_start">16dp</dimen>
     <dimen name="one_line_row_list__margin_end">16dp</dimen>
     <dimen name="one_line_row_list__text_margin_start">32dp</dimen>
-
 
 </resources>

@@ -1,8 +1,14 @@
 <resources>
-    <string name="about_github_handle">Sottti</string>
-    <string name="about_twitter_handle">\@sotttti</string>
-    <string name="about_stackoverflow_handle">Sotti</string>
-    <string name="about_medium_handle">Pablo Costa</string>
-    <string name="about_linkedin_handle">\Pablo Costa</string>
+    <string name="about_github_handle">Github</string>
+    <string name="about_twitter_handle">Twitter</string>
+    <string name="about_stackoverflow_handle">Stack Overflow</string>
+    <string name="about_medium_handle">Medium</string>
+    <string name="about_linkedin_handle">LinkedIn</string>
     <string name="about_bottom_nav_title">About Me</string>
+
+    <string name="image_desc_cover_image">Cover image</string>
+    <string name="image_desc_profile_image">Profile image</string>
+    <string name="name">Pablo Costa</string>
+    <string name="occupation">Android Engineer</string>
+    <string name="location">London, Uk</string>
 </resources>

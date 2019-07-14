@@ -1,109 +1,173 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/about_fragment_root"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/cover_image"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/cover_image"
-            app:layout_constraintDimensionRatio="16:9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@color/scrim"
-            app:layout_constraintBottom_toBottomOf="@id/cover_image"
-            app:layout_constraintEnd_toEndOf="@id/cover_image"
-            app:layout_constraintStart_toStartOf="@id/cover_image"
-            app:layout_constraintTop_toTopOf="@id/cover_image" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card"
-            style="@style/Widget.MaterialComponents.CardView"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="@id/cover_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cover_image">
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:elevation="2dp"
-            android:src="@drawable/profile_image"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="1dp"
-            app:layout_constraintBottom_toTopOf="@id/card"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="@id/card"
-            app:layout_constraintStart_toStartOf="@id/card"
-            app:layout_constraintTop_toTopOf="@id/card"
-            app:layout_constraintWidth_percent="0.25" />
-
-        <com.sotti.ui.kit.OneLineListRowWithIcon
-            android:id="@+id/github"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/about_fragment_root"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card"
-            app:ollrwi_icon="@drawable/ic_github_24dp"
-            app:ollrwi_text="@string/about_github_handle" />
+            android:paddingBottom="@dimen/list_vertical_padding">
 
-        <com.sotti.ui.kit.OneLineListRowWithIcon
-            android:id="@+id/stackoverflow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/github"
-            app:ollrwi_icon="@drawable/ic_stackoverflow_24dp"
-            app:ollrwi_text="@string/about_stackoverflow_handle" />
+            <ImageView
+                android:id="@+id/cover_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/image_desc_cover_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cover_image"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <com.sotti.ui.kit.OneLineListRowWithIcon
-            android:id="@+id/medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/stackoverflow"
-            app:ollrwi_icon="@drawable/ic_medium_24dp"
-            app:ollrwi_text="@string/about_medium_handle" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/scrim"
+                app:layout_constraintBottom_toBottomOf="@id/cover_image"
+                app:layout_constraintEnd_toEndOf="@id/cover_image"
+                app:layout_constraintStart_toStartOf="@id/cover_image"
+                app:layout_constraintTop_toTopOf="@id/cover_image" />
 
-        <com.sotti.ui.kit.OneLineListRowWithIcon
-            android:id="@+id/twitter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/medium"
-            app:ollrwi_icon="@drawable/ic_twitter_logo_24dp"
-            app:ollrwi_text="@string/about_twitter_handle" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/image_desc_profile_image"
+                android:src="@drawable/profile_image"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/cover_image"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.3" />
 
-        <com.sotti.ui.kit.OneLineListRowWithIcon
-            android:id="@+id/linkedin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/twitter"
-            app:ollrwi_icon="@drawable/ic_linkedin_24dp"
-            app:ollrwi_text="@string/about_linkedin_handle" />
+            <TextView
+                android:id="@+id/name"
+                style="@style/Headline5.Black.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_16"
+                android:layout_marginTop="@dimen/spacing_8"
+                android:layout_marginEnd="@dimen/spacing_16"
+                android:gravity="center_horizontal"
+                android:text="@string/name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_image" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/ocuppation"
+                style="@style/Body2.Black.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_16"
+                android:layout_marginEnd="@dimen/spacing_16"
+                android:text="@string/occupation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name" />
+
+            <TextView
+                android:id="@+id/location"
+                style="@style/Caption.Black.Tertiary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_16"
+                android:layout_marginEnd="@dimen/spacing_16"
+                android:text="@string/location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ocuppation" />
+
+            <Space
+                android:id="@+id/profile_image_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/profile_image"
+                app:layout_constraintEnd_toEndOf="@id/profile_image"
+                app:layout_constraintStart_toStartOf="@id/profile_image"
+                app:layout_constraintTop_toTopOf="@id/profile_image" />
+
+            <Space
+                android:id="@+id/card_bottom_reference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_16"
+                app:layout_constraintEnd_toEndOf="@id/profile_image"
+                app:layout_constraintStart_toStartOf="@id/profile_image"
+                app:layout_constraintTop_toBottomOf="@id/location" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/vertical_keyline_primary"
+                android:layout_marginEnd="@dimen/vertical_keyline_primary"
+                app:layout_constraintBottom_toBottomOf="@id/card_bottom_reference"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/profile_image_center" />
+
+            <com.sotti.ui.kit.OneLineListRowWithIcon
+                android:id="@+id/github"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/list_vertical_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card"
+                app:ollrwi_icon="@drawable/ic_github_24dp"
+                app:ollrwi_text="@string/about_github_handle" />
+
+            <com.sotti.ui.kit.OneLineListRowWithIcon
+                android:id="@+id/stackoverflow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/github"
+                app:ollrwi_icon="@drawable/ic_stackoverflow_24dp"
+                app:ollrwi_text="@string/about_stackoverflow_handle" />
+
+            <com.sotti.ui.kit.OneLineListRowWithIcon
+                android:id="@+id/medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stackoverflow"
+                app:ollrwi_icon="@drawable/ic_medium_24dp"
+                app:ollrwi_text="@string/about_medium_handle" />
+
+            <com.sotti.ui.kit.OneLineListRowWithIcon
+                android:id="@+id/twitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medium"
+                app:ollrwi_icon="@drawable/ic_twitter_logo_24dp"
+                app:ollrwi_text="@string/about_twitter_handle" />
+
+            <com.sotti.ui.kit.OneLineListRowWithIcon
+                android:id="@+id/linkedin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/twitter"
+                app:ollrwi_icon="@drawable/ic_linkedin_24dp"
+                app:ollrwi_text="@string/about_linkedin_handle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
 
 </layout>

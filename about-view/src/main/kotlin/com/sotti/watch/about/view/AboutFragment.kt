@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.sotti.ui.kit.dpToPx
 import com.sotti.watch.about.view.databinding.AboutFragmentBinding
 import com.sotti.watch.intents.loadChromeCustomTab
 
@@ -24,8 +25,19 @@ internal class AboutFragment : Fragment() {
             container,
             false
         )
+        setUpElevations()
         setClickListeners()
         return viewBinding.root
+    }
+
+    private fun setUpElevations() {
+        with(viewBinding) {
+            val topOfTheCardContentElevation = card.elevation + dpToPx(1)
+            profileImage.elevation = topOfTheCardContentElevation
+            name.elevation = topOfTheCardContentElevation
+            ocuppation.elevation = topOfTheCardContentElevation
+            location.elevation = topOfTheCardContentElevation
+        }
     }
 
     private fun setClickListeners() {
