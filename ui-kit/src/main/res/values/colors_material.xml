@@ -52,4 +52,14 @@
 
     <!--Other-->
     <color name="scrim">@color/black_32</color>
+
+    <!--2014 Material palette-->
+    <color name="light_blue_500">#03a9f4</color>
+
+    <color name="orange_500">#ff9800</color>
+
+    <color name="grey_100">#F5F5F5</color>
+
+
+
 </resources>
