@@ -1,13 +1,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/touch_target"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/one_line_row_list__with_icon__height"
-        android:background="?selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true">
+    <merge
+        tools:background="?selectableItemBackground"
+        tools:clickable="true"
+        tools:focusable="true"
+        tools:layout_height="@dimen/one_line_row_list__with_icon__height"
+        tools:layout_width="match_parent"
+        tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
         <ImageView
             android:id="@+id/icon"
@@ -33,6 +34,6 @@
             app:layout_constraintStart_toEndOf="@+id/icon"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </merge>
 
 </layout>

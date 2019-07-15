@@ -124,7 +124,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/profile_image_center" />
 
-            <com.sotti.ui.kit.OneLineListRowWithIcon
+            <com.sotti.ui.kit.OneLineRow
                 android:id="@+id/github"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -132,48 +132,48 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card"
-                app:ollrwi_icon="@drawable/ic_github_24dp"
-                app:ollrwi_text="@string/about_github_handle" />
+                app:olr_icon="@drawable/ic_github_24dp"
+                app:olr_text="@string/about_github_handle" />
 
-            <com.sotti.ui.kit.OneLineListRowWithIcon
+            <com.sotti.ui.kit.OneLineRow
                 android:id="@+id/stackoverflow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/github"
-                app:ollrwi_icon="@drawable/ic_stackoverflow_24dp"
-                app:ollrwi_text="@string/about_stackoverflow_handle" />
+                app:olr_icon="@drawable/ic_stackoverflow_24dp"
+                app:olr_text="@string/about_stackoverflow_handle" />
 
-            <com.sotti.ui.kit.OneLineListRowWithIcon
+            <com.sotti.ui.kit.OneLineRow
                 android:id="@+id/medium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/stackoverflow"
-                app:ollrwi_icon="@drawable/ic_medium_24dp"
-                app:ollrwi_text="@string/about_medium_handle" />
+                app:olr_icon="@drawable/ic_medium_24dp"
+                app:olr_text="@string/about_medium_handle" />
 
-            <com.sotti.ui.kit.OneLineListRowWithIcon
+            <com.sotti.ui.kit.OneLineRow
                 android:id="@+id/twitter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/medium"
-                app:ollrwi_icon="@drawable/ic_twitter_logo_24dp"
-                app:ollrwi_text="@string/about_twitter_handle" />
+                app:olr_icon="@drawable/ic_twitter_logo_24dp"
+                app:olr_text="@string/about_twitter_handle" />
 
-            <com.sotti.ui.kit.OneLineListRowWithIcon
+            <com.sotti.ui.kit.OneLineRow
                 android:id="@+id/linkedin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/twitter"
-                app:ollrwi_icon="@drawable/ic_linkedin_24dp"
-                app:ollrwi_text="@string/about_linkedin_handle" />
+                app:olr_icon="@drawable/ic_linkedin_24dp"
+                app:olr_text="@string/about_linkedin_handle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

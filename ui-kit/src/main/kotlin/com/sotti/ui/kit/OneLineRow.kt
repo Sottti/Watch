@@ -7,17 +7,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.withStyledAttributes
+import com.sotti.watch.utils.dimensToPx
+import com.sotti.watch.utils.setSelectableItemBackground
 
 
-class OneLineListRowWithIcon @JvmOverloads constructor(
+class OneLineRow @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
-
-    private val touchTarget by lazy {
-        findViewById<ConstraintLayout>(R.id.touch_target)
-    }
 
     private val icon by lazy {
         findViewById<ImageView>(R.id.icon)
@@ -28,24 +26,37 @@ class OneLineListRowWithIcon @JvmOverloads constructor(
     }
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.one_line_list_row_with_icon, this)
+        setStyle()
+        LayoutInflater.from(context).inflate(R.layout.one_line_row, this)
         context.withStyledAttributes(
             set = attrs,
-            attrs = R.styleable.oneLineListRowWithIcon
+            attrs = R.styleable.oneLineListRow
         ) {
             icon.setImageResource(
                 getResourceId(
-                    R.styleable.oneLineListRowWithIcon_ollrwi_icon,
+                    R.styleable.oneLineListRow_olr_icon,
                     R.drawable.ic_outline_bluetooth_24dp
                 )
             )
 
-            text.text = getString(R.styleable.oneLineListRowWithIcon_ollrwi_text)
+            text.text = getString(R.styleable.oneLineListRow_olr_text)
                 ?: resources.getString(R.string.one_line_list_row)
         }
     }
 
-    fun setOnClickListener(listener: () -> Unit) {
-        touchTarget.setOnClickListener { listener.invoke() }
+    private fun setStyle() {
+        isClickable = true
+        isFocusable = true
+        setSelectableItemBackground()
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(
+            widthMeasureSpec,
+            MeasureSpec.makeMeasureSpec(
+                dimensToPx(R.dimen.one_line_row_list__with_icon__height),
+                MeasureSpec.EXACTLY
+            )
+        )
     }
 }
