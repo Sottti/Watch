@@ -29,7 +29,7 @@ android {
 dependencies {
 
     implementation deps.koin.android
-    implementation deps.squareup.leakCanary.runtime
+    implementation deps.squareup.leakCanary
 
     implementation deps.google.android.x.ui.material
     implementation deps.google.android.x.ui.constraintLayout
