@@ -1,11 +1,12 @@
 package com.sotti.watch.about.view
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.sotti.watch.about.view.AboutViewActions.OpenSocialMediaProfile
 import com.sotti.watch.about.view.AboutViewActions.ShowEasterEgg
 import com.sotti.watch.about.view.AboutViewIntents.*
-import com.sotti.watch.utils.ViewActions
-import com.sotti.watch.utils.ViewActionsHandler
+import com.sotti.watch.utils.SingleLiveAction
+import com.sotti.watch.utils.exhaustive
 
 internal class AboutViewModel : ViewModel() {
 
@@ -15,20 +16,30 @@ internal class AboutViewModel : ViewModel() {
 
     private var easterEggInteractionsCount = 0
 
-    val actions = ViewActions<ViewActionsHandler<AboutViewActions>>()
+    private val _actions = SingleLiveAction<AboutViewActions>()
+    val actions: LiveData<AboutViewActions> = _actions
 
-    fun onIntent(intents: AboutViewIntents) = when (intents) {
-        OnShowEasterEgg -> {
-            easterEggInteractionsCount += 1
-            if (easterEggInteractionsCount == easterEggInteractionsThreshold) {
-                easterEggInteractionsCount = 0
-                actions.new { handleAction(ShowEasterEgg) }
-            } else Unit
-        }
-        OnOpenGithubProfile -> actions.new { handleAction(OpenSocialMediaProfile("https://github.com/Sottti")) }
-        OnOpenMediumProfile -> actions.new { handleAction(OpenSocialMediaProfile("https://medium.com/@sotti")) }
-        OnOpenTwitterProfile -> actions.new { handleAction(OpenSocialMediaProfile("https://twitter.com/Sotttti")) }
-        OnOpenLinkedInProfile -> actions.new { handleAction(OpenSocialMediaProfile("https://uk.linkedin.com/in/sotti")) }
-        OnOpenStackOverflowProfile -> actions.new { handleAction(OpenSocialMediaProfile("https://stackoverflow.com/users/1177959/sotti")) }
+    fun onIntent(intent: AboutViewIntents) {
+        when (intent) {
+            OnShowEasterEgg -> {
+                easterEggInteractionsCount += 1
+                if (easterEggInteractionsCount >= easterEggInteractionsThreshold) {
+                    easterEggInteractionsCount = 0
+                    _actions.value = ShowEasterEgg
+                } else Unit
+            }
+            OnOpenGithubProfile, OnOpenMediumProfile, OnOpenTwitterProfile, OnOpenLinkedInProfile,
+            OnOpenStackOverflowProfile -> _actions.value = OpenSocialMediaProfile(getUrl(intent))
+        }.exhaustive
     }
+
+
+    private fun getUrl(intent: AboutViewIntents) = when (intent) {
+        OnOpenGithubProfile -> "https://github.com/Sottti"
+        OnOpenMediumProfile -> "https://medium.com/@sotti"
+        OnOpenTwitterProfile -> "https://twitter.com/Sotttti"
+        OnOpenLinkedInProfile -> "https://uk.linkedin.com/in/sotti"
+        OnOpenStackOverflowProfile -> "https://stackoverflow.com/users/1177959/sotti"
+        OnShowEasterEgg -> throw IllegalArgumentException("The OnShowEasterEgg intent shouldn't reach this when statement")
+    }.exhaustive
 }

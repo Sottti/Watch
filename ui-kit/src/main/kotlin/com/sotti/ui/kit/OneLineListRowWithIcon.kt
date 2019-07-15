@@ -15,15 +15,15 @@ class OneLineListRowWithIcon @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    private val touchTarget: ConstraintLayout by lazy {
+    private val touchTarget by lazy {
         findViewById<ConstraintLayout>(R.id.touch_target)
     }
 
-    private val icon: ImageView by lazy {
+    private val icon by lazy {
         findViewById<ImageView>(R.id.icon)
     }
 
-    private val text: TextView by lazy {
+    private val text by lazy {
         findViewById<TextView>(R.id.text)
     }
 

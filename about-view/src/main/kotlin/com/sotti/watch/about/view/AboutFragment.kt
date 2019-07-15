@@ -6,17 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.sotti.ui.kit.dpToPx
 import com.sotti.watch.about.view.AboutViewActions.OpenSocialMediaProfile
 import com.sotti.watch.about.view.AboutViewIntents.*
 import com.sotti.watch.about.view.databinding.AboutFragmentBinding
 import com.sotti.watch.intents.loadChromeCustomTab
-import com.sotti.watch.utils.ViewActionsHandler
 import com.sotti.watch.utils.spin
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.sotti.watch.about.view.AboutViewActions.*
+import com.sotti.watch.utils.exhaustive
 
-internal class AboutFragment : Fragment(), ViewActionsHandler<AboutViewActions> {
+internal class AboutFragment : Fragment() {
 
     private val viewModel: AboutViewModel by viewModel()
     private lateinit var viewBinding: AboutFragmentBinding
@@ -24,7 +25,6 @@ internal class AboutFragment : Fragment(), ViewActionsHandler<AboutViewActions> 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injectAboutModules()
-        viewModel.actions.register(this, this)
     }
 
     override fun onCreateView(
@@ -45,6 +45,12 @@ internal class AboutFragment : Fragment(), ViewActionsHandler<AboutViewActions> 
         super.onViewCreated(view, savedInstanceState)
         setUpElevations()
         setClickListeners()
+        viewModel.actions.observe(this, Observer { action ->
+            when (action) {
+                is OpenSocialMediaProfile -> loadChromeCustomTab(action.url)
+                ShowEasterEgg -> viewBinding.profileImage.spin()
+            }.exhaustive
+        })
     }
 
     private fun setUpElevations() {
@@ -63,10 +69,4 @@ internal class AboutFragment : Fragment(), ViewActionsHandler<AboutViewActions> 
             profileImage.setOnClickListener { viewModel.onIntent(OnShowEasterEgg) }
         }
     }
-
-    override fun handleAction(action: AboutViewActions) =
-        when (action) {
-            is OpenSocialMediaProfile -> loadChromeCustomTab(action.url)
-            ShowEasterEgg -> viewBinding.profileImage.spin()
-        }
 }
