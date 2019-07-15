@@ -38,7 +38,7 @@ dependencies {
     implementation deps.google.android.x.architecture.navigation.runtime
     implementation deps.google.android.x.architecture.navigation.fragment
 
+    implementation project(':ui-kit')
     implementation project(':about-view')
     implementation project(':explore-view')
-    implementation project(':ui-kit')
 }
