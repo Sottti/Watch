@@ -58,9 +58,7 @@ buildscript {
                                     'architecture': [
                                             'lifecycle' : [
                                                     viewModel  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.ext.versions.lifecycle",
-                                                    extensions : "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.versions.lifecycle",
-                                                    commonJava8: "androidx.lifecycle:lifecycle-common-java8:$rootProject.ext.versions.lifecycle",
-                                                    compiler   : "androidx.lifecycle:lifecycle-compiler:$rootProject.ext.versions.lifecycle"
+                                                    liveData : "androidx.lifecycle:lifecycle-livedata:$rootProject.ext.versions.lifecycle"
                                             ],
                                             'core'      : [
                                                     testing: "androidx.arch.core:core-testing:2.1.0-beta01"

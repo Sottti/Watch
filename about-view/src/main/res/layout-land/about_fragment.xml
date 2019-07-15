@@ -74,7 +74,7 @@
                     app:layout_constraintTop_toBottomOf="@id/profile_image" />
 
                 <TextView
-                    android:id="@+id/ocuppation"
+                    android:id="@+id/occupation"
                     style="@style/Body2.Black.Secondary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                     android:text="@string/location"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ocuppation" />
+                    app:layout_constraintTop_toBottomOf="@id/occupation" />
 
                 <Space
                     android:id="@+id/profile_image_center"
@@ -127,6 +127,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/profile_image_center" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/card_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="profile_image,occupation,name,location" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

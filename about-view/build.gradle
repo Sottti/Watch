@@ -4,11 +4,17 @@ apply from: '../scripts/android_library_module.gradle'
 apply from: '../scripts/android_test_dependencies.gradle'
 
 dependencies {
+    implementation deps.koin.android
+    implementation deps.koin.viewModel
+
     implementation deps.circleImageView
+
     implementation deps.google.android.x.ui.material
     implementation deps.google.android.x.ui.fragment
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.foundation.appCompat
+    implementation deps.google.android.x.architecture.lifecycle.viewModel
+    implementation deps.google.android.x.architecture.lifecycle.liveData
 
     implementation project(':utils')
     implementation project(':ui-kit')
