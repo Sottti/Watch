@@ -8,6 +8,7 @@ dependencies {
 
     implementation deps.kotlin.x.coroutines.core
 
+    implementation deps.squareup.okhttp.okhttp
     implementation deps.squareup.retrofit.moshiConverter
     implementation deps.squareup.okhttp.loggingInterceptor
 
