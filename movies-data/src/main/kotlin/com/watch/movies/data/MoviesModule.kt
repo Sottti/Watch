@@ -1,5 +1,6 @@
 package com.watch.movies.data
 
+import com.sotti.watch.network.common.networkCommonModule
 import com.watch.movies.data.datasources.MoviesDataSources
 import com.watch.movies.data.datasources.local.MoviesRoomDS
 import com.watch.movies.data.datasources.remote.MoviesApiDS
@@ -13,12 +14,12 @@ import org.koin.dsl.module
 fun injectMoviesRepositoryModules() = loadMoviesRepositoryModules
 
 private val loadMoviesRepositoryModules by lazy {
-    loadKoinModules(moviesRepositoryModule)
+    loadKoinModules(listOf(moviesRepositoryModule, networkCommonModule))
 }
 
 private val moviesRepositoryModule = module {
     single<MoviesRepository> { MoviesRepositoryImpl(localDS = get(), remoteDS = get()) }
     single<MoviesDataSources.LocalDS> { MoviesRoomDS() }
     single<MoviesDataSources.RemoteDS> { MoviesApiDS(service = get()) }
-    single<TmdbApiService> { TmdbApiServiceImpl() }
+    single<TmdbApiService> { TmdbApiServiceImpl(retrofit = get()) }
 }

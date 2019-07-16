@@ -8,15 +8,7 @@ dependencies {
 
     implementation deps.kotlin.x.coroutines.core
 
-    implementation deps.squareup.okhttp.okhttp
-    implementation deps.squareup.retrofit.moshiConverter
-    implementation deps.squareup.okhttp.loggingInterceptor
-
-    implementation deps.google.android.x.foundation.annotations
-
-    kapt deps.google.android.x.architecture.room.compiler
-    implementation deps.google.android.x.architecture.room.runtime
-
     implementation project (':utils')
     implementation project (':movies-domain')
+    implementation project (':network-common')
 }

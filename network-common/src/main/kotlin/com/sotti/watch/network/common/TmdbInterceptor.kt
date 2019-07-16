@@ -1,10 +1,10 @@
-package com.watch.movies.data.datasources.remote
+package com.sotti.watch.network.common
 
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.Request
 
-internal class TmdbInterceptor : Interceptor {
+class TmdbInterceptor : Interceptor {
 
     private val apiKeyQueryParamName = "api_key"
     private val apiKeyQueryParamValue = "94aa0490aec35aea9986d0c67dbf03b1"
