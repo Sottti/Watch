@@ -1,7 +1,7 @@
 package com.watch.movies.data.repository
 
 import com.watch.movies.data.datasources.MoviesDataSources
-import com.watch.movies.domain.SuccessLoadingMovies
+import com.watch.movies.domain.SuccessLoadingMoviesDM
 
 internal class MoviesRepositoryImpl(
     private val localDS: MoviesDataSources.LocalDS,
@@ -10,7 +10,7 @@ internal class MoviesRepositoryImpl(
 
     override suspend fun loadPopularMovies() =
         localDS.loadPopularMovies().let { result ->
-            if (result is SuccessLoadingMovies) result
+            if (result is SuccessLoadingMoviesDM) result
             else remoteDS.loadPopularMovies()
         }
 

@@ -16,5 +16,6 @@ dependencies {
     kapt deps.google.android.x.architecture.room.compiler
     implementation deps.google.android.x.architecture.room.runtime
 
+    implementation project (':utils')
     implementation project (':movies-domain')
 }

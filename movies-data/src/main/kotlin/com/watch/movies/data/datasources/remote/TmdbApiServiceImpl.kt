@@ -2,7 +2,7 @@ package com.watch.movies.data.datasources.remote
 
 import com.squareup.moshi.Moshi
 import com.watch.movies.data.BuildConfig
-import com.watch.movies.data.datasources.MovieOverviewAM
+import com.watch.movies.data.datasources.PopularMoviesResponseAM
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -17,15 +17,13 @@ internal class TmdbApiServiceImpl : TmdbApiService {
         const val baseUrl = "https://api.themoviedb.org/3"
     }
 
-    override suspend fun loadPopularMovies(): Response<Set<MovieOverviewAM>> {
-        return service.loadPopularMovies()
-    }
+    override suspend fun loadPopularMovies() = service.loadPopularMovies()
 
     private interface TmdbApiService {
         @GET("/discover/movie")
         suspend fun loadPopularMovies(
             @Query("sort_by") sorting: String = "popularity.desc"
-        ): Response<Set<MovieOverviewAM>>
+        ): Response<PopularMoviesResponseAM>
     }
 
     private val service by lazy {
