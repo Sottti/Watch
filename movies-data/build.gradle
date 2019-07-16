@@ -9,6 +9,7 @@ dependencies {
     implementation deps.kotlin.x.coroutines.core
 
     implementation deps.squareup.retrofit.moshiConverter
+    implementation deps.squareup.okhttp.loggingInterceptor
 
     implementation deps.google.android.x.foundation.annotations
 

@@ -3,6 +3,8 @@ package com.watch.movies.data
 import com.watch.movies.data.datasources.MoviesDataSources
 import com.watch.movies.data.datasources.local.MoviesRoomDS
 import com.watch.movies.data.datasources.remote.MoviesApiDS
+import com.watch.movies.data.datasources.remote.TmdbApiService
+import com.watch.movies.data.datasources.remote.TmdbApiServiceImpl
 import com.watch.movies.data.repository.MoviesRepository
 import com.watch.movies.data.repository.MoviesRepositoryImpl
 import org.koin.core.context.loadKoinModules
@@ -17,5 +19,6 @@ private val loadMoviesRepositoryModules by lazy {
 private val moviesRepositoryModule = module {
     single<MoviesRepository> { MoviesRepositoryImpl(localDS = get(), remoteDS = get()) }
     single<MoviesDataSources.LocalDS> { MoviesRoomDS() }
-    single<MoviesDataSources.RemoteDS> { MoviesApiDS() }
+    single<MoviesDataSources.RemoteDS> { MoviesApiDS(service = get()) }
+    single<TmdbApiService> { TmdbApiServiceImpl() }
 }
