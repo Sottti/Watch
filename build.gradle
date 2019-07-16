@@ -6,7 +6,7 @@ buildscript {
             targetSdk   : 29,
             compileSdk  : 29,
 
-            espresso    : '3.3.0-alpha01',
+            espresso    : '3.3.0-alpha02',
             testAndRules: '1.3.0-alpha02',
             lifecycle   : '2.2.0-alpha02',
             dagger      : '2.23.1',
