@@ -91,7 +91,7 @@ buildscript {
             ],
             'squareup'       : [
                     'okhttp'  : [
-                            okhttp: "com.squareup.okhttp3:okhttp:4.0.1$rootProject.ext.versions.okhttp",
+                            okhttp: "com.squareup.okhttp3:okhttp:$rootProject.ext.versions.okhttp",
                             loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.versions.okhttp"
                     ],
                     'retrofit': [
