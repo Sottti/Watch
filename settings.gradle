@@ -1,6 +1,8 @@
 include ':app',
         ':explore-view',
         ':about-view',
+        ':movies-domain',
+        ':movies-data',
         ':intents',
         ':ui-kit',
         ':utils',

@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+apply from: '../scripts/build_types.gradle'
+apply from: '../scripts/android_library_module.gradle'
+apply from: '../scripts/android_test_dependencies.gradle'
+
+dependencies {
+    implementation deps.koin.core
+
+    implementation deps.kotlin.x.coroutines.core
+
+    implementation deps.squareup.retrofit.moshiConverter
+
+    implementation deps.google.android.x.foundation.annotations
+
+    kapt deps.google.android.x.architecture.room.compiler
+    implementation deps.google.android.x.architecture.room.runtime
+
+    implementation project (':movies-domain')
+}

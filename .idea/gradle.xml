@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/explore-view" />
             <option value="$PROJECT_DIR$/intents" />
+            <option value="$PROJECT_DIR$/movies-data" />
+            <option value="$PROJECT_DIR$/movies-domain" />
             <option value="$PROJECT_DIR$/ui-kit" />
             <option value="$PROJECT_DIR$/utils" />
           </set>
