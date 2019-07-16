@@ -42,7 +42,7 @@ buildscript {
                                             appCompat  : "androidx.appcompat:appcompat:1.1.0-rc01",
                                             annotations: "androidx.annotation:annotation:1.1.0",
                                             'test'     : [
-                                                    junit     : "androidx.test.ext:junit:1.1.2-alpha01",
+                                                    junit     : "androidx.test.ext:junit:1.1.2-alpha02",
                                                     rules     : "androidx.test:rules:$rootProject.ext.versions.testAndRules",
                                                     runner    : "androidx.test:runner:$rootProject.ext.versions.testAndRules",
                                                     'espresso': [
