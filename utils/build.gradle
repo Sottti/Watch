@@ -3,5 +3,6 @@ apply from: '../scripts/build_types.gradle'
 apply from: '../scripts/android_library_module.gradle'
 
 dependencies {
+    implementation deps.google.android.x.ui.fragment
     implementation deps.google.android.x.ui.constraintLayout
 }

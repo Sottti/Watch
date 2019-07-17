@@ -4,9 +4,15 @@ apply from: '../scripts/android_test_dependencies.gradle'
 apply from: '../scripts/build_types.gradle'
 
 dependencies {
+    implementation deps.koin.android
+    implementation deps.koin.viewModel
+
     implementation deps.google.android.x.ui.fragment
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.foundation.appCompat
 
+    implementation project(':utils')
     implementation project(':ui-kit')
+    implementation project(':movies-data')
+    implementation project(':movies-domain')
 }

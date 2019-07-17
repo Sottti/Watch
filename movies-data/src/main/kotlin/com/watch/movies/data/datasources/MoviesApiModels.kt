@@ -16,7 +16,7 @@ internal data class PopularMoviesResponseAM(
     @field:Json(name = "results")
     val results: Set<MovieOverviewAM>
 ) {
-    fun hasMovies() = results.isEmpty()
+    fun hasMovies() = results.isNotEmpty()
 }
 
 internal data class MovieOverviewAM(

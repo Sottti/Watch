@@ -8,7 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-private const val baseUrl = "https://api.themoviedb.org/3"
+private const val baseUrl = "https://api.themoviedb.org/3/"
 private const val cacheSize: Long = 25 * 1024 * 1024
 
 fun getCommonRetrofit(context: Context): Retrofit = initRetrofit(context)

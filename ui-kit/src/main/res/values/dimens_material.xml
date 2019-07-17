@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="circular_progress_bar">48dp</dimen>
+
     <!--General Spacing-->
     <dimen name="spacing_8">8dp</dimen>
     <dimen name="spacing_16">16dp</dimen>

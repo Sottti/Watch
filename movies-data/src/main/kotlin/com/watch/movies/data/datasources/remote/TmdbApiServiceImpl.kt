@@ -11,7 +11,7 @@ internal class TmdbApiServiceImpl(retrofit: Retrofit) : TmdbApiService {
     override suspend fun loadPopularMovies() = service.loadPopularMovies()
 
     private interface TmdbApiService {
-        @GET("/discover/movie")
+        @GET("discover/movie")
         suspend fun loadPopularMovies(
             @Query("sort_by") sorting: String = "popularity.desc"
         ): Response<PopularMoviesResponseAM>

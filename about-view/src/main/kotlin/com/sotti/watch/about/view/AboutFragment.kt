@@ -4,18 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.sotti.ui.kit.dpToPx
 import com.sotti.watch.about.view.AboutViewActions.OpenSocialMediaProfile
+import com.sotti.watch.about.view.AboutViewActions.ShowEasterEgg
 import com.sotti.watch.about.view.AboutViewIntents.*
 import com.sotti.watch.about.view.databinding.AboutFragmentBinding
 import com.sotti.watch.intents.loadChromeCustomTab
+import com.sotti.watch.utils.exhaustive
+import com.sotti.watch.utils.inflate
 import com.sotti.watch.utils.spin
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import com.sotti.watch.about.view.AboutViewActions.*
-import com.sotti.watch.utils.exhaustive
 
 internal class AboutFragment : Fragment() {
 
@@ -32,12 +32,7 @@ internal class AboutFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.about_fragment,
-            container,
-            false
-        )
+        viewBinding = inflate(R.layout.about_fragment, container)
         return viewBinding.root
     }
 
