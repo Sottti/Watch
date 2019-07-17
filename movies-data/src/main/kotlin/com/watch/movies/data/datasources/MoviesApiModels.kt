@@ -20,5 +20,15 @@ internal data class PopularMoviesResponseAM(
 }
 
 internal data class MovieOverviewAM(
-    val id: Int
+    @field:Json(name = "id")
+    val id: Int,
+
+    @field:Json(name = "title")
+    val title : String,
+
+    @field:Json(name = "poster_path")
+    val posterPath : String,
+
+    @field:Json(name = "vote_average")
+    val voteAverage : Float
 )

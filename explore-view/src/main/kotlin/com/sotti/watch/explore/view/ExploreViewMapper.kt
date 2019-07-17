@@ -1,13 +1,14 @@
 package com.sotti.watch.explore.view
 
-import com.watch.movies.domain.ErrorLoadingMoviesDM
-import com.watch.movies.domain.LoadMoviesResultDM
-import com.watch.movies.domain.NoMoviesFoundDM
-import com.watch.movies.domain.SuccessLoadingMoviesDM
+import com.watch.movies.domain.*
 
 internal fun LoadMoviesResultDM.toUiModel(): ExploreViewStateUIM =
     when (this) {
         ErrorLoadingMoviesDM -> ErrorLoadingUIM
         NoMoviesFoundDM -> NoMoviesFoundUIM
-        is SuccessLoadingMoviesDM -> SuccessLoadingUIM(movies.size)
+        is SuccessLoadingMoviesDM -> SuccessLoadingUIM(movies.toUiModel())
     }
+
+internal fun Set<MovieOverviewDM>.toUiModel() = map { it.toUiModel() }
+
+internal fun MovieOverviewDM.toUiModel() = MovieOverviewUIM(id, title, posterPath, voteAverage)

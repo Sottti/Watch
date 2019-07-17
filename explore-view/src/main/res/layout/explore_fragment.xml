@@ -14,17 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/movies_counter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{uiModel.moviesCount}"
-            android:visibility="@{uiModel.moviesCounterVisibility}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="38" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            style="@style/RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="8"
+            tools:listitem="@layout/explore_movie_vh" />
 
         <TextView
             android:id="@+id/empty_content_message"

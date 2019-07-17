@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="uiModel"
+            type="com.sotti.watch.explore.view.MovieOverviewUIM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="56dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/vertical_keyline_primary"
+            android:layout_marginTop="@dimen/spacing_8"
+            android:layout_marginBottom="@dimen/spacing_8"
+            android:scaleType="centerCrop"
+            android:src="@drawable/the_matrix_poster"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="9:16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Subtitle1.Black.Primary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/vertical_keyline_primary"
+            android:text="@{uiModel.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/poster"
+            app:layout_constraintTop_toTopOf="@id/poster"
+            tools:text="@string/movie_title" />
+
+        <TextView
+            android:id="@+id/vote_average"
+            style="@style/Body2.Black.Secondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/vertical_keyline_primary"
+            android:text="@{uiModel.voteAverageString}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:text="@string/movie_rating" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

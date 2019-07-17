@@ -7,35 +7,36 @@ internal sealed class ExploreViewStateUIM {
     abstract val isErrorMessageVisible: Boolean
     abstract val isMoviesCounterVisible: Boolean
     abstract val isEmptyContentMessageVisible: Boolean
-    abstract val moviesCount : Int
+    abstract val movies: List<MovieOverviewUIM>
 }
 
 internal object LoadingUIM : ExploreViewStateUIM() {
-    override val moviesCount = 0
     override val isProgressBarVisible = true
     override val isErrorMessageVisible = false
     override val isMoviesCounterVisible = false
     override val isEmptyContentMessageVisible = false
+    override val movies = emptyList<MovieOverviewUIM>()
 }
 
 internal object ErrorLoadingUIM : ExploreViewStateUIM() {
-    override val moviesCount = 0
     override val isProgressBarVisible = false
     override val isErrorMessageVisible = true
     override val isMoviesCounterVisible = false
     override val isEmptyContentMessageVisible = false
+    override val movies = emptyList<MovieOverviewUIM>()
 }
 
 internal object NoMoviesFoundUIM : ExploreViewStateUIM() {
-    override val moviesCount = 0
     override val isProgressBarVisible = false
     override val isErrorMessageVisible = false
     override val isMoviesCounterVisible = false
     override val isEmptyContentMessageVisible = true
+    override val movies = emptyList<MovieOverviewUIM>()
 }
 
-internal data class SuccessLoadingUIM(val count: Int) : ExploreViewStateUIM() {
-    override val moviesCount = count
+internal data class SuccessLoadingUIM(
+    override val movies: List<MovieOverviewUIM>
+) : ExploreViewStateUIM() {
     override val isProgressBarVisible = false
     override val isErrorMessageVisible = false
     override val isMoviesCounterVisible = true
@@ -45,8 +46,16 @@ internal data class SuccessLoadingUIM(val count: Int) : ExploreViewStateUIM() {
 internal class ExploreViewStateUIMDecorator(viewState: ExploreViewStateUIM) {
     val progressBarVisibility = if (viewState.isProgressBarVisible) View.VISIBLE else View.GONE
     val errorMessageVisibility = if (viewState.isErrorMessageVisible) View.VISIBLE else View.GONE
-    val moviesCounterVisibility = if (viewState.isMoviesCounterVisible) View.VISIBLE else View.GONE
-    val emptyContentMessageVisibility =
-        if (viewState.isEmptyContentMessageVisible) View.VISIBLE else View.GONE
-    val moviesCount = viewState.moviesCount.toString()
+    val emptyContentMessageVisibility = if (viewState.isEmptyContentMessageVisible) View.VISIBLE else View.GONE
+}
+
+internal sealed class ExploreListItemUIM
+
+internal data class MovieOverviewUIM(
+    val id: Int,
+    val title : String,
+    val posterPath: String,
+    val voteAverage : Float
+) : ExploreListItemUIM() {
+    val voteAverageString = voteAverage.toString()
 }
