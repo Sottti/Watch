@@ -11,4 +11,11 @@ internal fun LoadMoviesResultDM.toUiModel(): ExploreViewStateUIM =
 
 internal fun Set<MovieOverviewDM>.toUiModel() = map { it.toUiModel() }
 
-internal fun MovieOverviewDM.toUiModel() = MovieOverviewUIM(id, title, posterPath, voteAverage)
+internal fun MovieOverviewDM.toUiModel() =
+    MovieOverviewUIM(
+        id = id,
+        title = title,
+        posterPath = posterPath,
+        voteAverage = voteAverage,
+        overview = overview
+    )

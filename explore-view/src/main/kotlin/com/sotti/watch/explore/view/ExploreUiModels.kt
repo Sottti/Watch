@@ -1,6 +1,8 @@
 package com.sotti.watch.explore.view
 
+import android.content.Context
 import android.view.View
+import androidx.core.content.ContextCompat
 
 internal sealed class ExploreViewStateUIM {
     abstract val isProgressBarVisible: Boolean
@@ -46,16 +48,45 @@ internal data class SuccessLoadingUIM(
 internal class ExploreViewStateUIMDecorator(viewState: ExploreViewStateUIM) {
     val progressBarVisibility = if (viewState.isProgressBarVisible) View.VISIBLE else View.GONE
     val errorMessageVisibility = if (viewState.isErrorMessageVisible) View.VISIBLE else View.GONE
-    val emptyContentMessageVisibility = if (viewState.isEmptyContentMessageVisible) View.VISIBLE else View.GONE
+    val emptyContentMessageVisibility =
+        if (viewState.isEmptyContentMessageVisible) View.VISIBLE else View.GONE
 }
 
 internal sealed class ExploreListItemUIM
 
 internal data class MovieOverviewUIM(
     val id: Int,
-    val title : String,
+    val title: String,
     val posterPath: String,
-    val voteAverage : Float
+    val voteAverage: Float,
+    val overview : String
 ) : ExploreListItemUIM() {
-    val voteAverageString = voteAverage.toString()
+    val voteAverageColorResId = when {
+        voteAverage < 3 -> R.color.rating_bad
+        voteAverage < 5 -> R.color.rating_below_average
+        voteAverage < 7 -> R.color.rating_average
+        voteAverage < 9 -> R.color.rating_good
+        else -> R.color.rating_very_good
+    }
+
+    val voteAverageIconResId = when {
+        voteAverage < 3 -> R.drawable.ic_round_star_border_18dp
+        voteAverage < 7 -> R.drawable.ic_round_star_half_18dp
+        else -> R.drawable.ic_round_star_18dp
+    }
+}
+
+internal class MovieOverViewUIMDecorator(
+    private var movieOverview: MovieOverviewUIM,
+    context: Context
+) {
+    fun bind(newMovieOverview: MovieOverviewUIM) = apply { movieOverview = newMovieOverview }
+
+    val title = movieOverview.title
+    val overview = movieOverview.overview
+    val posterPath = movieOverview.posterPath
+    val voteAverageString = movieOverview.voteAverage.toString()
+    val voteAverageColor = ContextCompat.getColor(context, movieOverview.voteAverageColorResId)
+    val voteAverageIconResId =
+        ContextCompat.getDrawable(context, movieOverview.voteAverageIconResId)
 }

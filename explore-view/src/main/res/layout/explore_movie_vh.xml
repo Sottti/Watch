@@ -7,7 +7,7 @@
 
         <variable
             name="uiModel"
-            type="com.sotti.watch.explore.view.MovieOverviewUIM" />
+            type="com.sotti.watch.explore.view.MovieOverViewUIMDecorator" />
 
     </data>
 
@@ -16,17 +16,16 @@
         android:layout_height="wrap_content"
         android:background="?selectableItemBackground"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        android:paddingTop="@dimen/spacing_8"
+        android:paddingBottom="@dimen/spacing_8">
 
         <ImageView
             android:id="@+id/poster"
-            android:layout_width="56dp"
+            android:layout_width="@dimen/poster_width"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/vertical_keyline_primary"
-            android:layout_marginTop="@dimen/spacing_8"
-            android:layout_marginBottom="@dimen/spacing_8"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="3:4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,28 +34,60 @@
 
         <TextView
             android:id="@+id/title"
-            style="@style/Subtitle1.Black.Primary"
+            style="@style/Headline6.Black.Primary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_16"
             android:layout_marginEnd="@dimen/vertical_keyline_primary"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:text="@{uiModel.title}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/poster"
             app:layout_constraintTop_toTopOf="@id/poster"
             tools:text="@string/movie_title" />
 
+        <ImageView
+            android:id="@+id/vote_average_icon"
+            android:layout_width="@dimen/ic_small"
+            android:layout_height="@dimen/ic_small"
+            android:src="@{uiModel.voteAverageIconResId}"
+            android:tint="@{uiModel.voteAverageColor}"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:src="@drawable/ic_round_star_18dp"
+            tools:tint="@color/icon_black_inactive" />
+
+
         <TextView
             android:id="@+id/vote_average"
+            style="@style/Caption.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_4"
+            android:layout_marginEnd="@dimen/vertical_keyline_primary"
+            android:text="@{uiModel.voteAverageString}"
+            android:textColor="@{uiModel.voteAverageColor}"
+            app:layout_constraintBottom_toBottomOf="@id/vote_average_icon"
+            app:layout_constraintStart_toEndOf="@id/vote_average_icon"
+            app:layout_constraintTop_toTopOf="@id/vote_average_icon"
+            tools:text="@string/movie_rating"
+            tools:textColor="@color/text_black_medium_emphasis" />
+
+        <TextView
+            android:id="@+id/overview"
             style="@style/Body2.Black.Secondary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_8"
             android:layout_marginEnd="@dimen/vertical_keyline_primary"
-            android:text="@{uiModel.voteAverageString}"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@{uiModel.overview}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/title"
-            app:layout_constraintTop_toBottomOf="@id/title"
-            tools:text="@string/movie_rating" />
+            app:layout_constraintTop_toBottomOf="@id/vote_average"
+            tools:text="@string/overview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

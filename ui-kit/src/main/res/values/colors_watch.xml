@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rating_bad">@color/red_500</color>
+    <color name="rating_below_average">@color/red_300</color>
+    <color name="rating_average">@color/orange_500</color>
+    <color name="rating_good">@color/green_300</color>
+    <color name="rating_very_good">@color/green_500</color>
+</resources>

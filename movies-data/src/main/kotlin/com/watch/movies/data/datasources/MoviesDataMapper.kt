@@ -5,4 +5,10 @@ import com.watch.movies.domain.MovieOverviewDM
 
 internal fun Set<MovieOverviewAM>.toDM() = mapToSet { it.toDM() }
 
-internal fun MovieOverviewAM.toDM() = MovieOverviewDM(id, title, posterPath, voteAverage)
+internal fun MovieOverviewAM.toDM() = MovieOverviewDM(
+    id = id,
+    title = title,
+    posterPath = posterPath,
+    voteAverage = voteAverage,
+    overview = overview
+)

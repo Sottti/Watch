@@ -30,5 +30,8 @@ internal data class MovieOverviewAM(
     val posterPath : String,
 
     @field:Json(name = "vote_average")
-    val voteAverage : Float
+    val voteAverage : Float,
+
+    @field:Json(name = "overview")
+    val overview : String
 )
