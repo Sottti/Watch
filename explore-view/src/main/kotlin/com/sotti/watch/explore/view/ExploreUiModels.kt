@@ -1,6 +1,7 @@
 package com.sotti.watch.explore.view
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.content.ContextCompat
 
@@ -59,7 +60,7 @@ internal data class MovieOverviewUIM(
     val title: String,
     val posterPath: String,
     val voteAverage: Float,
-    val overview : String
+    val overview: String
 ) : ExploreListItemUIM() {
     val voteAverageColorResId = when {
         voteAverage < 3 -> R.color.rating_bad
@@ -78,15 +79,25 @@ internal data class MovieOverviewUIM(
 
 internal class MovieOverViewUIMDecorator(
     private var movieOverview: MovieOverviewUIM,
-    context: Context
+    private val context: Context
 ) {
     fun bind(newMovieOverview: MovieOverviewUIM) = apply { movieOverview = newMovieOverview }
 
-    val title = movieOverview.title
-    val overview = movieOverview.overview
-    val posterPath = movieOverview.posterPath
-    val voteAverageString = movieOverview.voteAverage.toString()
-    val voteAverageColor = ContextCompat.getColor(context, movieOverview.voteAverageColorResId)
-    val voteAverageIconResId =
-        ContextCompat.getDrawable(context, movieOverview.voteAverageIconResId)
+    val title: String
+        get() = movieOverview.title
+
+    val overview: String
+        get() = movieOverview.overview
+
+    val posterPath: String
+        get() = movieOverview.posterPath
+
+    val voteAverageString: String
+        get() = movieOverview.voteAverage.toString()
+
+    val voteAverageColor: Int
+        get() = ContextCompat.getColor(context, movieOverview.voteAverageColorResId)
+
+    val voteAverageIconResId: Drawable?
+        get() = ContextCompat.getDrawable(context, movieOverview.voteAverageIconResId)
 }
