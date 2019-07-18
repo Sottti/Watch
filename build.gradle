@@ -78,7 +78,7 @@ buildscript {
                                             fragment          : "androidx.fragment:fragment-ktx:1.2.0-alpha01",
                                             cardView          : "androidx.cardview:cardview:1.0.0",
                                             material          : "com.google.android.material:material:1.1.0-alpha08",
-                                            recyclerView      : "androidx.recyclerview:recyclerview:1.1.0-alpha06",
+                                            recyclerView      : "androidx.recyclerview:recyclerview:1.1.0-beta01",
                                             constraintLayout  : "androidx.constraintlayout:constraintlayout:2.0.0-beta2",
                                             swipeRefreshLayout: "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha01",
                                             coordinatorLayout : "androidx.coordinatorlayout:coordinatorlayout:1.1.0-beta01",
