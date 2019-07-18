@@ -17,8 +17,8 @@
         android:background="?selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        android:paddingTop="@dimen/spacing_8"
-        android:paddingBottom="@dimen/spacing_8">
+        android:paddingTop="@dimen/spacing_16"
+        android:paddingBottom="@dimen/spacing_16">
 
         <ImageView
             android:id="@+id/poster"
