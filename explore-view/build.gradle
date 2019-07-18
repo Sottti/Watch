@@ -18,5 +18,6 @@ dependencies {
     implementation project(':utils')
     implementation project(':ui-kit')
     implementation project(':movies-data')
+    implementation project(':image-loader')
     implementation project(':movies-domain')
 }

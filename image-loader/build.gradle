@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+apply from: '../scripts/build_types.gradle'
+apply from: '../scripts/android_library_module.gradle'
+apply from: '../scripts/android_test_dependencies.gradle'
+
+dependencies {
+    implementation deps.google.glide.runtime
+    kapt deps.google.glide.compiler
+
+    implementation project (":utils")
+    implementation project (":ui-kit")
+}

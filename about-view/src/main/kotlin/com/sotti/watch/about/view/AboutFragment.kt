@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.sotti.ui.kit.dpToPx
+import com.sotti.ui.kit.dpToPixel
 import com.sotti.watch.about.view.AboutViewActions.OpenSocialMediaProfile
 import com.sotti.watch.about.view.AboutViewActions.ShowEasterEgg
 import com.sotti.watch.about.view.AboutViewIntents.*
@@ -50,7 +50,7 @@ internal class AboutFragment : Fragment() {
 
     private fun setUpElevations() {
         with(viewBinding) {
-            cardContent.elevation = card.elevation.plus(dpToPx(1))
+            cardContent.elevation = card.elevation.plus(1f.dpToPixel(requireContext()))
         }
     }
 

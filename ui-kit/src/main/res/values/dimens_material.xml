@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="corner_radius_small">2dp</dimen>
+    <dimen name="corner_radius_medium">4dp</dimen>
+    <dimen name="corner_radius_large">8dp</dimen>
+
     <dimen name="circular_progress_bar">48dp</dimen>
 
     <!--General Spacing-->

@@ -1,6 +1,11 @@
 package com.sotti.ui.kit
 
-import android.content.res.Resources
+import android.content.Context
+import android.util.DisplayMetrics
 
-fun dpToPx(dps: Int) = (dps * Resources.getSystem().displayMetrics.density).toInt()
-fun pxToDp(pixels: Int) = (pixels / Resources.getSystem().displayMetrics.density).toInt()
+
+fun Float.dpToPixel(context: Context) =
+    this * (context.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
+
+fun Float.pixelsToDp(context: Context) =
+    this / (context.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)

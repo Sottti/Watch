@@ -8,10 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Watch" />
             <option value="$PROJECT_DIR$/about-view" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/explore-view" />
+            <option value="$PROJECT_DIR$/image-loader" />
             <option value="$PROJECT_DIR$/intents" />
             <option value="$PROJECT_DIR$/movies-data" />
             <option value="$PROJECT_DIR$/movies-domain" />

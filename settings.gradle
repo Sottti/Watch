@@ -4,8 +4,9 @@ include ':app',
         ':movies-domain',
         ':movies-data',
         ':network-common',
+        ':image-loader',
         ':intents',
         ':ui-kit',
-        ':utils',
+        ':utils'
 
-rootProject.name='Watch'
+rootProject.name = 'Watch'

@@ -26,11 +26,12 @@
             android:layout_marginTop="@dimen/spacing_8"
             android:layout_marginBottom="@dimen/spacing_8"
             android:scaleType="centerCrop"
-            android:src="@drawable/the_matrix_poster"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="9:16"
+            app:layout_constraintDimensionRatio="3:4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:posterPath="@{uiModel.posterPath}"
+            tools:src="@drawable/the_matrix_poster" />
 
         <TextView
             android:id="@+id/title"
