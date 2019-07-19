@@ -23,7 +23,7 @@ internal class AboutFragment : Fragment() {
     private lateinit var viewBinding: AboutFragmentBinding
 
     companion object {
-        const val ARG_AVOID_INJECTIONS = "avoidInjections"
+        const val ARG_AVOID_INJECTIONS = "skipInjections"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
