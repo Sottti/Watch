@@ -109,6 +109,8 @@ buildscript {
                     'core'     : "org.koin:koin-core:$rootProject.ext.versions.koin",
                     'android'  : "org.koin:koin-android:$rootProject.ext.versions.koin",
                     'viewModel': "org.koin:koin-androidx-viewmodel:$rootProject.ext.versions.koin",
+                    'test'     : "org.koin:koin-test:$rootProject.ext.versions.koin"
+
             ],
             'test'           : [
                     'mockito': [
