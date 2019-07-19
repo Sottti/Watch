@@ -10,8 +10,8 @@ dependencies {
     implementation deps.google.android.x.architecture.lifecycle.viewModel
     implementation deps.google.android.x.architecture.lifecycle.liveData
 
-    implementation deps.google.android.x.ui.fragment
     implementation deps.google.android.x.ui.recyclerView
+    implementation deps.google.android.x.ui.fragment.fragment
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.foundation.appCompat
 

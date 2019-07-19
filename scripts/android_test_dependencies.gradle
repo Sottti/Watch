@@ -6,4 +6,9 @@ dependencies {
     androidTestImplementation deps.google.android.x.foundation.test.rules
     androidTestImplementation deps.google.android.x.foundation.test.runner
     androidTestImplementation deps.google.android.x.foundation.test.junit
+
+    // FragmentScenario throws if this is not declared
+    kaptAndroidTest 'androidx.databinding:databinding-compiler:3.4.2'
+
+    androidTestImplementation deps.koin.test
 }

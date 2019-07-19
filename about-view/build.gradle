@@ -10,7 +10,8 @@ dependencies {
     implementation deps.circleImageView
 
     implementation deps.google.android.x.ui.material
-    implementation deps.google.android.x.ui.fragment
+    implementation deps.google.android.x.ui.fragment.fragment
+    androidTestImplementation deps.google.android.x.ui.fragment.testing
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.foundation.appCompat
     implementation deps.google.android.x.architecture.lifecycle.viewModel

@@ -24,7 +24,8 @@ internal class AboutFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        injectAboutModules()
+        val avoidInjections = arguments?.getBoolean("avoidInjections", true) == true
+        if (!avoidInjections) injectAboutModules()
     }
 
     override fun onCreateView(
