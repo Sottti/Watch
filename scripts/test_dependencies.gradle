@@ -8,6 +8,7 @@ dependencies {
     testImplementation deps.test.junit
     testImplementation deps.test.hamcrest
     testImplementation deps.test.mockito.core
+    testImplementation deps.test.mockito.inline
 
     testImplementation deps.kotlin.x.coroutines.test
 }

@@ -10,5 +10,9 @@ dependencies {
     // FragmentScenario throws if this is not declared
     kaptAndroidTest 'androidx.databinding:databinding-compiler:3.4.2'
 
-    androidTestImplementation deps.koin.test
+    androidTestImplementation (deps.koin.test) { exclude group: 'org.mockito' }
+
+    androidTestImplementation deps.test.mockito.inline
+
+    androidTestImplementation deps.test.mockito.android
 }
