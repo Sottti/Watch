@@ -12,6 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import com.sotti.watch.about.view.AboutFragment.Companion.ARG_AVOID_INJECTIONS
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -47,13 +48,9 @@ internal class AboutViewTests : KoinTest {
             loadKoinModules(aboutViewModule)
         }
 
-        val args = Bundle().apply {
-            putBoolean("avoidInjections", true)
-        }
-
         scenario =
             launchFragmentInContainer(
-                fragmentArgs = args,
+                fragmentArgs = Bundle().apply { putBoolean(ARG_AVOID_INJECTIONS, true) },
                 themeResId = R.style.Theme_MaterialComponents_Light_DarkActionBar
             )
 

@@ -22,9 +22,13 @@ internal class AboutFragment : Fragment() {
     private val viewModel: AboutViewModel by viewModel()
     private lateinit var viewBinding: AboutFragmentBinding
 
+    companion object {
+        const val ARG_AVOID_INJECTIONS = "avoidInjections"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val avoidInjections = arguments?.getBoolean("avoidInjections", true) == true
+        val avoidInjections = arguments?.getBoolean(ARG_AVOID_INJECTIONS, true) == true
         if (!avoidInjections) injectAboutModules()
     }
 
