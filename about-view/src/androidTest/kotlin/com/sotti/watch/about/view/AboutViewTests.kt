@@ -20,11 +20,10 @@ import org.junit.runner.RunWith
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
-import org.koin.test.KoinTest
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-internal class AboutViewTests : KoinTest {
+internal class AboutViewTests {
 
     private lateinit var scenario: FragmentScenario<AboutFragment>
 

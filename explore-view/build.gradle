@@ -1,20 +1,20 @@
 apply plugin: 'com.android.library'
+apply from: '../scripts/build_types.gradle'
 apply from: '../scripts/android_library_module.gradle'
 apply from: '../scripts/android_test_dependencies.gradle'
-apply from: '../scripts/build_types.gradle'
 
 dependencies {
     implementation deps.koin.android
     implementation deps.koin.viewModel
-
-    implementation deps.google.android.x.architecture.lifecycle.viewModel
-    implementation deps.google.android.x.architecture.lifecycle.liveData
 
     implementation deps.google.android.x.ui.material
     implementation deps.google.android.x.ui.recyclerView
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.ui.fragment.fragment
     implementation deps.google.android.x.foundation.appCompat
+
+    implementation deps.google.android.x.architecture.lifecycle.viewModel
+    implementation deps.google.android.x.architecture.lifecycle.liveData
 
     implementation project(':utils')
     implementation project(':error-view')

@@ -13,13 +13,18 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 internal class ExploreFragment : Fragment(), Observer<ExploreViewStateUIM> {
 
+    companion object {
+        const val ARG_AVOID_INJECTIONS = "skipInjections"
+    }
+
     private var listAdapter = ExploreAdapter()
     private val viewModel: ExploreViewModel by viewModel()
     private lateinit var viewBinding: ExploreFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        injectExploreModules()
+        val avoidInjections = arguments?.getBoolean(ARG_AVOID_INJECTIONS, true) == true
+        if (!avoidInjections) injectExploreModules()
     }
 
     override fun onCreateView(

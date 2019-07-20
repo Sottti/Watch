@@ -6,7 +6,7 @@ import org.koin.dsl.module
 
 internal fun injectAboutModules() = loadAboutModules
 
-val loadAboutModules by lazy {
+private val loadAboutModules by lazy {
     loadKoinModules(aboutViewModule)
 }
 

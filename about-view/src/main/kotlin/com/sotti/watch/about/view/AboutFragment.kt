@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.sotti.watch.utils.dpToPixel
 import com.sotti.watch.about.view.AboutViewActions.OpenSocialMediaProfile
 import com.sotti.watch.about.view.AboutViewActions.ShowEasterEgg
 import com.sotti.watch.about.view.AboutViewIntents.*
 import com.sotti.watch.about.view.databinding.AboutFragmentBinding
 import com.sotti.watch.intents.loadChromeCustomTab
+import com.sotti.watch.utils.dpToPixel
 import com.sotti.watch.utils.exhaustive
 import com.sotti.watch.utils.inflate
 import com.sotti.watch.utils.spin
@@ -19,12 +19,13 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 internal class AboutFragment : Fragment() {
 
-    private val viewModel: AboutViewModel by viewModel()
-    private lateinit var viewBinding: AboutFragmentBinding
-
     companion object {
         const val ARG_AVOID_INJECTIONS = "skipInjections"
     }
+
+    private val viewModel: AboutViewModel by viewModel()
+
+    private lateinit var viewBinding: AboutFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

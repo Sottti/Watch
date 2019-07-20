@@ -15,4 +15,6 @@ dependencies {
     androidTestImplementation deps.test.mockito.inline
 
     androidTestImplementation deps.test.mockito.android
+
+    androidTestImplementation deps.google.android.x.ui.fragment.testing
 }

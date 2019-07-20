@@ -13,5 +13,5 @@ private val loadExploreModules by lazy {
 }
 
 private val exploreViewModule = module {
-    viewModel { ExploreViewModel(moviesRepository = get()) }
+    viewModel<ExploreViewModel> { ExploreViewModelImpl(moviesRepository = get()) }
 }
