@@ -6,7 +6,9 @@ include ':app',
         ':network-common',
         ':image-loader',
         ':intents',
-        ':ui-kit',
+        ':one-line-row-view',
+        ':error-view',
+        ':ui-resources',
         ':utils'
 
 rootProject.name = 'Watch'

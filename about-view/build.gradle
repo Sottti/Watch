@@ -18,6 +18,6 @@ dependencies {
     implementation deps.google.android.x.architecture.lifecycle.liveData
 
     implementation project(':utils')
-    implementation project(':ui-kit')
     implementation project(':intents')
+    implementation project(':one-line-row-view')
 }

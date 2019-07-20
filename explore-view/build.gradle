@@ -16,7 +16,7 @@ dependencies {
     implementation deps.google.android.x.foundation.appCompat
 
     implementation project(':utils')
-    implementation project(':ui-kit')
+    implementation project(':ui-resources')
     implementation project(':movies-data')
     implementation project(':image-loader')
     implementation project(':movies-domain')

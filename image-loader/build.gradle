@@ -8,5 +8,5 @@ dependencies {
     kapt deps.google.glide.compiler
 
     implementation project (":utils")
-    implementation project (":ui-kit")
+    implementation project (':ui-resources')
 }

@@ -1,6 +1,6 @@
 package com.sotti.watch.explore.view
 
-import com.watch.movies.domain.*
+import com.sotti.watch.movies.domain.*
 
 internal fun LoadMoviesResultDM.toUiModel(): ExploreViewStateUIM =
     when (this) {
