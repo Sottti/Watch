@@ -19,9 +19,11 @@
             style="@style/RecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="@{uiModel.moviesListVisibility}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="8"
-            tools:listitem="@layout/explore_movie_vh" />
+            tools:listitem="@layout/explore_movie_vh"
+            tools:visibility="gone" />
 
         <TextView
             android:id="@+id/empty_content_message"
@@ -32,18 +34,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/error_message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Error loading movies"
-            android:visibility="@{uiModel.errorMessageVisibility}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -56,7 +48,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+        <com.sotti.watch.error.view.ErrorView
+            android:id="@+id/error_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="@{uiModel.errorViewVisibility}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

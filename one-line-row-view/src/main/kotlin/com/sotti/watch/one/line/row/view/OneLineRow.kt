@@ -2,12 +2,12 @@ package com.sotti.watch.one.line.row.view
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.withStyledAttributes
 import com.sotti.watch.utils.dimensToPx
+import com.sotti.watch.utils.inflate
 import com.sotti.watch.utils.setSelectableItemBackground
 
 
@@ -27,7 +27,11 @@ class OneLineRow @JvmOverloads constructor(
 
     init {
         setStyle()
-        LayoutInflater.from(context).inflate(R.layout.one_line_row_view, this)
+        inflate(R.layout.one_line_row)
+        readAttributes(context, attrs)
+    }
+
+    private fun readAttributes(context: Context, attrs: AttributeSet?) {
         context.withStyledAttributes(
             set = attrs,
             attrs = R.styleable.oneLineListRow

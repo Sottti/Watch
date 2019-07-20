@@ -7,32 +7,32 @@ import androidx.core.content.ContextCompat
 
 internal sealed class ExploreViewStateUIM {
     abstract val isProgressBarVisible: Boolean
-    abstract val isErrorMessageVisible: Boolean
-    abstract val isMoviesCounterVisible: Boolean
+    abstract val isErrorViewVisible: Boolean
+    abstract val isMoviesListVisible: Boolean
     abstract val isEmptyContentMessageVisible: Boolean
     abstract val movies: List<MovieOverviewUIM>
 }
 
 internal object LoadingUIM : ExploreViewStateUIM() {
     override val isProgressBarVisible = true
-    override val isErrorMessageVisible = false
-    override val isMoviesCounterVisible = false
+    override val isErrorViewVisible = false
+    override val isMoviesListVisible = false
     override val isEmptyContentMessageVisible = false
     override val movies = emptyList<MovieOverviewUIM>()
 }
 
 internal object ErrorLoadingUIM : ExploreViewStateUIM() {
     override val isProgressBarVisible = false
-    override val isErrorMessageVisible = true
-    override val isMoviesCounterVisible = false
+    override val isErrorViewVisible = true
+    override val isMoviesListVisible = false
     override val isEmptyContentMessageVisible = false
     override val movies = emptyList<MovieOverviewUIM>()
 }
 
 internal object NoMoviesFoundUIM : ExploreViewStateUIM() {
     override val isProgressBarVisible = false
-    override val isErrorMessageVisible = false
-    override val isMoviesCounterVisible = false
+    override val isErrorViewVisible = false
+    override val isMoviesListVisible = false
     override val isEmptyContentMessageVisible = true
     override val movies = emptyList<MovieOverviewUIM>()
 }
@@ -41,16 +41,17 @@ internal data class SuccessLoadingUIM(
     override val movies: List<MovieOverviewUIM>
 ) : ExploreViewStateUIM() {
     override val isProgressBarVisible = false
-    override val isErrorMessageVisible = false
-    override val isMoviesCounterVisible = true
+    override val isErrorViewVisible = false
+    override val isMoviesListVisible = true
     override val isEmptyContentMessageVisible = false
 }
 
 internal class ExploreViewStateUIMDecorator(viewState: ExploreViewStateUIM) {
     val progressBarVisibility = if (viewState.isProgressBarVisible) View.VISIBLE else View.GONE
-    val errorMessageVisibility = if (viewState.isErrorMessageVisible) View.VISIBLE else View.GONE
+    val errorViewVisibility = if (viewState.isErrorViewVisible) View.VISIBLE else View.GONE
     val emptyContentMessageVisibility =
         if (viewState.isEmptyContentMessageVisible) View.VISIBLE else View.GONE
+    val moviesListVisibility = if (viewState.isMoviesListVisible) View.VISIBLE else View.GONE
 }
 
 internal sealed class ExploreListItemUIM
