@@ -51,9 +51,8 @@ internal class AboutViewTests : KoinTest {
         scenario =
             launchFragmentInContainer(
                 fragmentArgs = Bundle().apply { putBoolean(ARG_AVOID_INJECTIONS, true) },
-                themeResId = R.style.Theme_MaterialComponents_Light_DarkActionBar
+                themeResId = R.style.WatchAppTheme
             )
-
     }
 
     @After
