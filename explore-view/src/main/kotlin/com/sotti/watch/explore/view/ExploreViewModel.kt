@@ -26,4 +26,8 @@ internal class ExploreViewModel(private val moviesRepository: MoviesRepository) 
             }
         }
     }
+
+    fun onRetry() {
+        loadPopularMovies()
+    }
 }

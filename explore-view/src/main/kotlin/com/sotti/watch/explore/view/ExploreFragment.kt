@@ -29,6 +29,7 @@ internal class ExploreFragment : Fragment(), Observer<ExploreViewStateUIM> {
     ): View? {
         viewBinding = inflate(R.layout.explore_fragment, container)
         viewModel.viewState.observe(this, this@ExploreFragment)
+        viewBinding.errorView.onRetryClickListener = { viewModel.onRetry()}
         return viewBinding.root
     }
 
