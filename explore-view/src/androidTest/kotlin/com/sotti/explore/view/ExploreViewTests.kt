@@ -1,6 +1,7 @@
 package com.sotti.explore.view
 
 import android.os.Bundle
+import android.service.autofill.Validators.not
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso

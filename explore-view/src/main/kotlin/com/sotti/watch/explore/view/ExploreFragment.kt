@@ -23,8 +23,8 @@ internal class ExploreFragment : Fragment(), Observer<ExploreViewStateUIM> {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val avoidInjections = arguments?.getBoolean(ARG_AVOID_INJECTIONS, true) == true
-        if (!avoidInjections) injectExploreModules()
+        val skipInjections = arguments?.getBoolean(ARG_AVOID_INJECTIONS, true) == true
+        if (!skipInjections) injectExploreModules()
     }
 
     override fun onCreateView(

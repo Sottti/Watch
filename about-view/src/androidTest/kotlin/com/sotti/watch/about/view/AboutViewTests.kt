@@ -1,7 +1,6 @@
 package com.sotti.watch.about.view
 
 
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -13,6 +12,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.sotti.watch.about.view.AboutFragment.Companion.ARG_AVOID_INJECTIONS
+import com.sotti.watch.android.tests.common.asLandscape
+import com.sotti.watch.android.tests.common.asPortrait
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -44,8 +45,10 @@ internal class AboutViewTests {
     @Before
     fun setUp() {
         startKoin {
-            loadKoinModules(aboutViewModule)
+
         }
+
+        loadKoinModules(aboutViewModule)
 
         scenario =
             launchFragmentInContainer(
@@ -61,17 +64,13 @@ internal class AboutViewTests {
 
     @Test
     fun visibility_portrait() {
-        scenario.onFragment {
-            it.activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        }
+        scenario.asPortrait()
         checkAllVisibilities()
     }
 
     @Test
     fun visibility_landscape() {
-        scenario.onFragment {
-            it.activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-        }
+        scenario.asLandscape()
         checkAllVisibilities()
     }
 

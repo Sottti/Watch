@@ -9,6 +9,7 @@ include ':app',
         ':one-line-row-view',
         ':error-view',
         ':ui-resources',
-        ':utils'
+        ':utils',
+        ':android-tests-common',
 
 rootProject.name = 'Watch'

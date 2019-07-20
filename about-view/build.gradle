@@ -12,13 +12,12 @@ dependencies {
     implementation deps.google.android.x.ui.material
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.ui.fragment.fragment
-
     implementation deps.google.android.x.foundation.appCompat
-
     implementation deps.google.android.x.architecture.lifecycle.viewModel
     implementation deps.google.android.x.architecture.lifecycle.liveData
 
     implementation project(':utils')
     implementation project(':intents')
     implementation project(':one-line-row-view')
+    implementation project(':android-tests-common')
 }

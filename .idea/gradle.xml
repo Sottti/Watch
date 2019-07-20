@@ -8,7 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Watch" />
             <option value="$PROJECT_DIR$/about-view" />
+            <option value="$PROJECT_DIR$/android-tests-common" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/error-view" />
             <option value="$PROJECT_DIR$/explore-view" />

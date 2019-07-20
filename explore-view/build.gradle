@@ -12,7 +12,6 @@ dependencies {
     implementation deps.google.android.x.ui.constraintLayout
     implementation deps.google.android.x.ui.fragment.fragment
     implementation deps.google.android.x.foundation.appCompat
-
     implementation deps.google.android.x.architecture.lifecycle.viewModel
     implementation deps.google.android.x.architecture.lifecycle.liveData
 
@@ -22,4 +21,5 @@ dependencies {
     implementation project(':ui-resources')
     implementation project(':image-loader')
     implementation project(':movies-domain')
+    implementation project(':android-tests-common')
 }
