@@ -8,6 +8,8 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import com.sotti.watch.android.tests.common.asLandscape
+import com.sotti.watch.android.tests.common.asPortrait
 import com.sotti.watch.explore.view.ExploreFragment
 import com.sotti.watch.explore.view.ExploreFragment.Companion.ARG_AVOID_INJECTIONS
 import com.sotti.watch.explore.view.ExploreViewModel
@@ -55,17 +57,33 @@ internal class ExploreViewTests {
     }
 
     @Test
-    fun showsProgressBar() {
+    fun showsProgressBar_portrait() {
         (fakeViewModel as FakeExploreViewModel).setMode(FakeExploreViewModel.Mode.LOADING)
-        launchFragment()
+        launchFragment().asPortrait()
         progressBar.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
         errorView.check(ViewAssertions.matches(not(ViewMatchers.isCompletelyDisplayed())))
     }
 
     @Test
-    fun showsErrorView() {
+    fun showsProgressBar_landscape() {
+        (fakeViewModel as FakeExploreViewModel).setMode(FakeExploreViewModel.Mode.LOADING)
+        launchFragment().asLandscape()
+        progressBar.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
+        errorView.check(ViewAssertions.matches(not(ViewMatchers.isCompletelyDisplayed())))
+    }
+
+    @Test
+    fun showsErrorView_portrait() {
         (fakeViewModel as FakeExploreViewModel).setMode(FakeExploreViewModel.Mode.ERROR)
-        launchFragment()
+        launchFragment().asPortrait()
+        progressBar.check(ViewAssertions.matches(not(ViewMatchers.isCompletelyDisplayed())))
+        checkErrorViewElementsAreVisible()
+    }
+
+    @Test
+    fun showsErrorView_landscape() {
+        (fakeViewModel as FakeExploreViewModel).setMode(FakeExploreViewModel.Mode.ERROR)
+        launchFragment().asLandscape()
         progressBar.check(ViewAssertions.matches(not(ViewMatchers.isCompletelyDisplayed())))
         checkErrorViewElementsAreVisible()
     }
@@ -78,12 +96,13 @@ internal class ExploreViewTests {
         errorViewRetryButton.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
     }
 
-    private fun launchFragment() {
+    private fun launchFragment(): FragmentScenario<ExploreFragment> {
         scenario =
             launchFragmentInContainer(
                 fragmentArgs = Bundle().apply { putBoolean(ARG_AVOID_INJECTIONS, true) },
                 themeResId = R.style.WatchAppTheme
             )
+        return scenario
     }
 
 }
