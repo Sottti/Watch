@@ -4,8 +4,8 @@
 
 Welcome to the Watch app guide.
 
-<a href="https://ibb.co/zPDMmVX"><img src="https://i.ibb.co/ZmqG7Bm/Screenshot-1563618490.png" alt="Screenshot-1561399686" border="0" width="250" height="480"></a>
 <a href="https://ibb.co/ngzFFDR"><img src="https://i.ibb.co/ysc82GW/Screenshot-1563618481.png" alt="Screenshot-1561399689" border="0" width="250" height="480"></a>
+<a href="https://ibb.co/zPDMmVX"><img src="https://i.ibb.co/ZmqG7Bm/Screenshot-1563618490.png" alt="Screenshot-1561399686" border="0" width="250" height="480"></a>
 
 ## Videos
 
