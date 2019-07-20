@@ -12,14 +12,6 @@ fun <T : ViewDataBinding> Fragment.inflate(
     container: ViewGroup?
 ): T = DataBindingUtil.inflate(layoutInflater, layoutResId, container, false)
 
-fun <T : ViewDataBinding> ViewGroup.inflate(@LayoutRes layoutResId: Int): T =
-    DataBindingUtil.inflate(
-        LayoutInflater.from(context),
-        layoutResId,
-        this,
-        true
-    )
-
 fun ViewGroup.inflate(@LayoutRes layoutResId: Int) {
     LayoutInflater.from(context).inflate(layoutResId, this)
 }

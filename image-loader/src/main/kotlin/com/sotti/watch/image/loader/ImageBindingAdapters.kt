@@ -2,7 +2,6 @@ package com.sotti.watch.image.loader
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
-import com.sotti.watch.image.loader.R
 
 @BindingAdapter("posterPath")
 fun loadPoster(imageView: ImageView, posterPath: String?) {
