@@ -49,12 +49,6 @@ internal class AboutViewTests {
         }
 
         loadKoinModules(aboutViewModule)
-
-        scenario =
-            launchFragmentInContainer(
-                fragmentArgs = Bundle().apply { putBoolean(ARG_AVOID_INJECTIONS, true) },
-                themeResId = R.style.WatchAppTheme
-            )
     }
 
     @After
@@ -64,13 +58,13 @@ internal class AboutViewTests {
 
     @Test
     fun visibility_portrait() {
-        scenario.asPortrait()
+        launchFragment().asPortrait()
         checkAllVisibilities()
     }
 
     @Test
     fun visibility_landscape() {
-        scenario.asLandscape()
+        launchFragment().asLandscape()
         checkAllVisibilities()
     }
 
@@ -88,5 +82,14 @@ internal class AboutViewTests {
         mediumRow.perform(ViewActions.scrollTo()).check(matches(isCompletelyDisplayed()))
         linkedInRow.perform(ViewActions.scrollTo()).check(matches(isCompletelyDisplayed()))
         twitterRow.perform(ViewActions.scrollTo()).check(matches(isCompletelyDisplayed()))
+    }
+
+    private fun launchFragment(): FragmentScenario<AboutFragment> {
+        scenario =
+            launchFragmentInContainer(
+                fragmentArgs = Bundle().apply { putBoolean(ARG_AVOID_INJECTIONS, true) },
+                themeResId = R.style.WatchAppTheme
+            )
+        return scenario
     }
 }
