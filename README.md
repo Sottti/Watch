@@ -9,7 +9,7 @@ Welcome to the Watch app guide.
 
 ## Videos
 
-Included in the app as well, you can find my thoughts about different aspects of the app [here](TODO) .
+Included in the app as well, you can find my thoughts about different aspects of the app here (coming).
 
 ## Run Tests
 

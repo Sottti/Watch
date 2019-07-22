@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <declare-styleable name="EmptyView">
+        <attr name="emv_image" format="reference" />
+        <attr name="emv_title" format="reference|string" />
+        <attr name="emv_subtitle" format="reference|string" />
+    </declare-styleable>
+
+</resources>

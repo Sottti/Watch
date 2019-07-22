@@ -34,16 +34,16 @@ class OneLineRow @JvmOverloads constructor(
     private fun readAttributes(context: Context, attrs: AttributeSet?) {
         context.withStyledAttributes(
             set = attrs,
-            attrs = R.styleable.oneLineListRow
+            attrs = R.styleable.OneLineListRow
         ) {
             icon.setImageResource(
                 getResourceId(
-                    R.styleable.oneLineListRow_olr_icon,
+                    R.styleable.OneLineListRow_olr_icon,
                     R.drawable.ic_outline_bluetooth_24dp
                 )
             )
 
-            text.text = getString(R.styleable.oneLineListRow_olr_text)
+            text.text = getString(R.styleable.OneLineListRow_olr_text)
                 ?: resources.getString(R.string.one_line_list_row)
         }
     }

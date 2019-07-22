@@ -16,19 +16,19 @@ class ErrorView @JvmOverloads constructor(
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     private val image by lazy {
-        findViewById<ImageView>(R.id.image)
+        findViewById<ImageView>(R.id.error_view_image)
     }
 
     private val title by lazy {
-        findViewById<TextView>(R.id.title)
+        findViewById<TextView>(R.id.error_view_title)
     }
 
     private val subtitle by lazy {
-        findViewById<TextView>(R.id.subtitle)
+        findViewById<TextView>(R.id.error_view_subtitle)
     }
 
     private val retry by lazy {
-        findViewById<MaterialButton>(R.id.retry)
+        findViewById<MaterialButton>(R.id.error_view_retry)
     }
 
     var onRetryClickListener: (() -> Unit)? = null
@@ -42,22 +42,22 @@ class ErrorView @JvmOverloads constructor(
     private fun readAttributes(context: Context, attributeSet: AttributeSet?) {
         context.withStyledAttributes(
             set = attributeSet,
-            attrs = R.styleable.errorView
+            attrs = R.styleable.ErrorView
         ) {
             image.setImageResource(
                 getResourceId(
-                    R.styleable.errorView_erv_image,
+                    R.styleable.ErrorView_erv_image,
                     R.drawable.image_cloud_sad
                 )
             )
 
-            title.text = getString(R.styleable.errorView_erv_title)
+            title.text = getString(R.styleable.ErrorView_erv_title)
                 ?: resources.getString(R.string.error_view_title_generic)
 
-            subtitle.text = getString(R.styleable.errorView_erv_subtitle)
+            subtitle.text = getString(R.styleable.ErrorView_erv_subtitle)
                 ?: resources.getString(R.string.error_view_subtitle_generic)
 
-            retry.text = getString(R.styleable.errorView_erv_buttonText)
+            retry.text = getString(R.styleable.ErrorView_erv_buttonText)
                 ?: resources.getString(R.string.retry)
         }
     }

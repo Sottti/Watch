@@ -18,7 +18,8 @@
         android:clickable="true"
         android:focusable="true"
         android:paddingTop="@dimen/spacing_16"
-        android:paddingBottom="@dimen/spacing_16">
+        android:paddingBottom="@dimen/spacing_16"
+        tools:theme="@style/WatchAppTheme">
 
         <ImageView
             android:id="@+id/poster"

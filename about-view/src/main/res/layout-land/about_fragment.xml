@@ -1,9 +1,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:theme="@style/WatchAppTheme">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/start_half"
@@ -57,7 +59,8 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.25"
-                    app:layout_constraintWidth_percent="0.25" />
+                    app:layout_constraintWidth_percent="0.25"
+                    tools:elevation="3dp" />
 
                 <TextView
                     android:id="@+id/name"
@@ -71,7 +74,8 @@
                     android:text="@string/name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/profile_image" />
+                    app:layout_constraintTop_toBottomOf="@id/profile_image"
+                    tools:elevation="3dp" />
 
                 <TextView
                     android:id="@+id/occupation"
@@ -83,7 +87,8 @@
                     android:text="@string/occupation"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/name" />
+                    app:layout_constraintTop_toBottomOf="@id/name"
+                    tools:elevation="3dp" />
 
                 <TextView
                     android:id="@+id/location"
@@ -95,7 +100,8 @@
                     android:text="@string/location"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/occupation" />
+                    app:layout_constraintTop_toBottomOf="@id/occupation"
+                    tools:elevation="3dp" />
 
                 <Space
                     android:id="@+id/profile_image_center"

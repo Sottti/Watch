@@ -45,7 +45,7 @@ internal class ExploreFragment : Fragment(), Observer<ExploreViewStateUIM> {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewBinding.recyclerView.apply {
+        viewBinding.content.apply {
             setHasFixedSize(true)
             adapter = listAdapter
         }

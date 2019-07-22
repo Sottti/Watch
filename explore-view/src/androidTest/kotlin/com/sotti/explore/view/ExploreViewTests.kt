@@ -3,9 +3,12 @@ package com.sotti.explore.view
 import android.os.Bundle
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.sotti.watch.android.tests.common.asLandscape
@@ -13,7 +16,10 @@ import com.sotti.watch.android.tests.common.asPortrait
 import com.sotti.watch.explore.view.ExploreFragment
 import com.sotti.watch.explore.view.ExploreFragment.Companion.ARG_AVOID_INJECTIONS
 import com.sotti.watch.explore.view.ExploreViewModel
+import com.sotti.watch.explore.view.MovieOverviewUIM
 import com.sotti.watch.explore.view.R
+import com.sotti.watch.explore.view.list.ExploreMovieVH
+import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.not
 import org.junit.After
 import org.junit.Before
@@ -29,16 +35,53 @@ import org.koin.dsl.module
 @RunWith(AndroidJUnit4::class)
 internal class ExploreViewTests {
 
-    private val fakeViewModel: ExploreViewModel = FakeExploreViewModel()
+    private val fakeViewModel = FakeExploreViewModel()
     private lateinit var scenario: FragmentScenario<ExploreFragment>
 
-    private val progressBar = Espresso.onView(ViewMatchers.withId(R.id.progress_bar))
+    private val progressBar = onView(ViewMatchers.withId(R.id.progress_bar))
 
-    private val errorView = Espresso.onView(ViewMatchers.withId(R.id.error_view))
-    private val errorViewImage = Espresso.onView(ViewMatchers.withId(R.id.image))
-    private val errorViewSubtitle = Espresso.onView(ViewMatchers.withId(R.id.title))
-    private val errorViewTitle = Espresso.onView(ViewMatchers.withId(R.id.subtitle))
-    private val errorViewRetryButton = Espresso.onView(ViewMatchers.withId(R.id.retry))
+    private val content = onView(ViewMatchers.withId(R.id.content))
+    private val listItemPoster = onView(ViewMatchers.withId(R.id.poster))
+    private val listItemTitle = onView(ViewMatchers.withId(R.id.title))
+    private val listItemVoteAverageIcon = onView(ViewMatchers.withId(R.id.vote_average_icon))
+    private val listItemVoteAverage = onView(ViewMatchers.withId(R.id.vote_average))
+    private val listItemOverview = onView(ViewMatchers.withId(R.id.overview))
+
+    private val emptyView = onView(ViewMatchers.withId(R.id.empty_view))
+    private val emptyViewImage = onView(ViewMatchers.withId(R.id.empty_view_image))
+    private val emptyViewTitle = onView(ViewMatchers.withId(R.id.empty_view_title))
+    private val emptyViewSubtitle = onView(ViewMatchers.withId(R.id.empty_view_subtitle))
+
+    private val errorView = onView(ViewMatchers.withId(R.id.error_view))
+    private val errorViewImage = onView(ViewMatchers.withId(R.id.error_view_image))
+    private val errorViewSubtitle = onView(ViewMatchers.withId(R.id.error_view_title))
+    private val errorViewTitle = onView(ViewMatchers.withId(R.id.error_view_subtitle))
+    private val errorViewRetryButton = onView(ViewMatchers.withId(R.id.error_view_retry))
+
+    private val singleMovie = listOf(theMatrix)
+
+    private val twentyMovies = listOf(
+        theMatrix,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        groundhogDay,
+        fightClub
+    )
 
     @Before
     fun setUp() {
@@ -47,7 +90,10 @@ internal class ExploreViewTests {
         }
 
         loadKoinModules(module {
-            viewModel { fakeViewModel }
+            viewModel {
+                @Suppress("USELESS_CAST")
+                fakeViewModel as ExploreViewModel
+            }
         })
     }
 
@@ -58,42 +104,152 @@ internal class ExploreViewTests {
 
     @Test
     fun showsProgressBar_portrait() {
-        (fakeViewModel as FakeExploreViewModel).setMode(FakeExploreViewModel.Mode.LOADING)
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.LOADING)
         launchFragment().asPortrait()
-        progressBar.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
-        errorView.check(ViewAssertions.matches(not(ViewMatchers.isCompletelyDisplayed())))
+        checkJustProgressBarIsVisible()
     }
 
     @Test
     fun showsProgressBar_landscape() {
-        (fakeViewModel as FakeExploreViewModel).setMode(FakeExploreViewModel.Mode.LOADING)
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.LOADING)
         launchFragment().asLandscape()
-        progressBar.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
-        errorView.check(ViewAssertions.matches(not(ViewMatchers.isCompletelyDisplayed())))
+        checkJustProgressBarIsVisible()
+    }
+
+    private fun checkJustProgressBarIsVisible() {
+        progressBar.check(matches(isCompletelyDisplayed()))
+        content.check(matches(not(isCompletelyDisplayed())))
+        errorView.check(matches(not(isCompletelyDisplayed())))
+        emptyView.check(matches(not(isCompletelyDisplayed())))
     }
 
     @Test
     fun showsErrorView_portrait() {
-        (fakeViewModel as FakeExploreViewModel).setMode(FakeExploreViewModel.Mode.ERROR)
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.ERROR)
         launchFragment().asPortrait()
-        progressBar.check(ViewAssertions.matches(not(ViewMatchers.isCompletelyDisplayed())))
+        checkJustErrorViewIsVisible()
         checkErrorViewElementsAreVisible()
     }
 
     @Test
     fun showsErrorView_landscape() {
-        (fakeViewModel as FakeExploreViewModel).setMode(FakeExploreViewModel.Mode.ERROR)
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.ERROR)
         launchFragment().asLandscape()
-        progressBar.check(ViewAssertions.matches(not(ViewMatchers.isCompletelyDisplayed())))
+        checkJustErrorViewIsVisible()
         checkErrorViewElementsAreVisible()
     }
 
+    private fun checkJustErrorViewIsVisible() {
+        errorView.check(matches(isCompletelyDisplayed()))
+        content.check(matches(not(isCompletelyDisplayed())))
+        emptyView.check(matches(not(isCompletelyDisplayed())))
+        progressBar.check(matches(not(isCompletelyDisplayed())))
+    }
+
     private fun checkErrorViewElementsAreVisible() {
-        errorView.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
-        errorViewImage.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
-        errorViewTitle.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
-        errorViewSubtitle.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
-        errorViewRetryButton.check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
+        errorView.check(matches(isCompletelyDisplayed()))
+        errorViewImage.check(matches(isCompletelyDisplayed()))
+        errorViewTitle.check(matches(isCompletelyDisplayed()))
+        errorViewSubtitle.check(matches(isCompletelyDisplayed()))
+        errorViewRetryButton.check(matches(isCompletelyDisplayed()))
+    }
+
+    @Test
+    fun showsEmptyView_portrait() {
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.EMPTY)
+        launchFragment().asPortrait()
+        checkJustEmptyViewIsVisible()
+        checkEmptyViewElementsAreVisible()
+    }
+
+    @Test
+    fun showsEmptyView_landscape() {
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.EMPTY)
+        launchFragment().asLandscape()
+        checkJustEmptyViewIsVisible()
+        checkEmptyViewElementsAreVisible()
+    }
+
+    private fun checkJustEmptyViewIsVisible() {
+        emptyView.check(matches(isCompletelyDisplayed()))
+        content.check(matches(not(isCompletelyDisplayed())))
+        errorView.check(matches(not(isCompletelyDisplayed())))
+        progressBar.check(matches(not(isCompletelyDisplayed())))
+    }
+
+    private fun checkEmptyViewElementsAreVisible() {
+        emptyView.check(matches(isCompletelyDisplayed()))
+        emptyViewImage.check(matches(isCompletelyDisplayed()))
+        emptyViewTitle.check(matches(isCompletelyDisplayed()))
+        emptyViewSubtitle.check(matches(isCompletelyDisplayed()))
+    }
+
+    @Test
+    fun listItemContentIsVisible_portrait() {
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.CONTENT)
+        fakeViewModel.setContent(singleMovie)
+        launchFragment().asPortrait()
+        checkJustContentIsVisible()
+        checkListItemContent(singleMovie[0])
+    }
+
+    @Test
+    fun listItemContentIsVisible_landscape() {
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.CONTENT)
+        fakeViewModel.setContent(singleMovie)
+        launchFragment().asLandscape()
+        checkJustContentIsVisible()
+        checkListItemContent(singleMovie[0])
+    }
+
+    private fun checkJustContentIsVisible() {
+        content.check(matches(isCompletelyDisplayed()))
+        emptyView.check(matches(not(isCompletelyDisplayed())))
+        errorView.check(matches(not(isCompletelyDisplayed())))
+        progressBar.check(matches(not(isCompletelyDisplayed())))
+    }
+
+    private fun checkListItemContent(movie: MovieOverviewUIM) {
+        content.perform(RecyclerViewActions.scrollToPosition<ExploreMovieVH>(0))
+        listItemPoster.check(matches(isCompletelyDisplayed()))
+        listItemVoteAverageIcon.check(matches(isCompletelyDisplayed()))
+        listItemTitle.check(matches(allOf(withText(movie.title), isCompletelyDisplayed())))
+        listItemOverview.check(matches(allOf(withText(movie.overview), isCompletelyDisplayed())))
+        listItemVoteAverage.check(
+            matches(
+                allOf(
+                    withText(movie.voteAverage.toString()),
+                    isCompletelyDisplayed()
+                )
+            )
+        )
+    }
+
+    @Test
+    fun contentCanScroll_portrait() {
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.CONTENT)
+        fakeViewModel.setContent(twentyMovies)
+        launchFragment().asPortrait()
+        checkCanScroll()
+    }
+
+    @Test
+    fun contentCanScroll_landscape() {
+        fakeViewModel.setMode(FakeExploreViewModel.Mode.CONTENT)
+        fakeViewModel.setContent(twentyMovies)
+        launchFragment().asPortrait()
+        checkCanScroll()
+    }
+
+    private fun checkCanScroll() {
+        content.perform(RecyclerViewActions.scrollToPosition<ExploreMovieVH>(0))
+        onView(withText(twentyMovies[0].title)).check(matches(isCompletelyDisplayed()))
+        content.perform(RecyclerViewActions.scrollToPosition<ExploreMovieVH>(twentyMovies.size - 1))
+        onView(withText(twentyMovies[twentyMovies.size - 1].title)).check(
+            matches(
+                isCompletelyDisplayed()
+            )
+        )
     }
 
     private fun launchFragment(): FragmentScenario<ExploreFragment> {

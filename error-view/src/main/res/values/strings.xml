@@ -3,4 +3,5 @@
     <string name="retry">Retry</string>
     <string name="error_view_title_generic">Oops</string>
     <string name="error_view_subtitle_generic">Something went wrong</string>
+    <string name="image_content_desc">Image representing some kind of error happened</string>
 </resources>

@@ -1,9 +1,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:theme="@style/WatchAppTheme">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/about_fragment_root"
@@ -48,7 +50,8 @@
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintWidth_percent="0.3" />
+                app:layout_constraintWidth_percent="0.3"
+                tools:elevation="3dp" />
 
             <TextView
                 android:id="@+id/name"
@@ -62,7 +65,8 @@
                 android:text="@string/name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/profile_image" />
+                app:layout_constraintTop_toBottomOf="@id/profile_image"
+                tools:elevation="3dp" />
 
             <TextView
                 android:id="@+id/occupation"
@@ -74,7 +78,8 @@
                 android:text="@string/occupation"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name" />
+                app:layout_constraintTop_toBottomOf="@id/name"
+                tools:elevation="3dp" />
 
             <TextView
                 android:id="@+id/location"
@@ -86,7 +91,8 @@
                 android:text="@string/location"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/occupation" />
+                app:layout_constraintTop_toBottomOf="@id/occupation"
+                tools:elevation="3dp" />
 
             <Space
                 android:id="@+id/profile_image_center"

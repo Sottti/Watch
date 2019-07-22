@@ -6,18 +6,8 @@ import com.sotti.watch.explore.view.*
 
 internal class FakeExploreViewModel : ExploreViewModel() {
 
-    enum class Mode {
-        LOADING,
-        ERROR,
-        EMPTY,
-        SUCCESS
-    }
-
-    fun setMode(mode : Mode) {
-        this.mode = mode
-    }
-
     private var mode: Mode = Mode.LOADING
+    private lateinit var movies: List<MovieOverviewUIM>
 
     override val _viewState = MutableLiveData<ExploreViewStateUIM>()
     override val viewState: LiveData<ExploreViewStateUIM>
@@ -26,23 +16,27 @@ internal class FakeExploreViewModel : ExploreViewModel() {
             return _viewState
         }
 
+    enum class Mode {
+        LOADING,
+        ERROR,
+        EMPTY,
+        CONTENT
+    }
+
+    fun setContent(movies: List<MovieOverviewUIM>) {
+        this.movies = movies
+    }
+
+    fun setMode(mode: Mode) {
+        this.mode = mode
+    }
+
     private fun loadPopularMovies() {
         when (mode) {
             Mode.LOADING -> _viewState.value = LoadingUIM
             Mode.ERROR -> _viewState.value = ErrorLoadingUIM
             Mode.EMPTY -> _viewState.value = NoMoviesFoundUIM
-            Mode.SUCCESS -> _viewState.value =
-                SuccessLoadingUIM(
-                    listOf(
-                        MovieOverviewUIM(
-                            id = 1,
-                            title = "Title",
-                            posterPath = "",
-                            voteAverage = 8.0f,
-                            overview = ""
-                        )
-                    )
-                )
+            Mode.CONTENT -> _viewState.value = SuccessLoadingUIM(movies)
         }
     }
 

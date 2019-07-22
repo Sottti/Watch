@@ -16,6 +16,7 @@ dependencies {
     implementation deps.google.android.x.architecture.lifecycle.liveData
 
     implementation project(':utils')
+    implementation project(':empty-view')
     implementation project(':error-view')
     implementation project(':movies-data')
     implementation project(':ui-resources')
