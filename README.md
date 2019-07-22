@@ -15,7 +15,7 @@ Included in the app as well, you can find my thoughts about different aspects of
 
 Execute the next gradle tasks from the terminal.
 
-For executing all unit --> `gradlew testLiveDebugUnitTest`
+For executing all unit tests --> `gradlew testLiveDebugUnitTest`
 
 For executing all android tests --> `gradlew connectedLiveDebugAndroidTest --no-parallel`
 
