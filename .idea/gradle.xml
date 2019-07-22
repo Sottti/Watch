@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/movies-domain" />
             <option value="$PROJECT_DIR$/network-common" />
             <option value="$PROJECT_DIR$/one-line-row-view" />
+            <option value="$PROJECT_DIR$/tests-common" />
             <option value="$PROJECT_DIR$/ui-resources" />
             <option value="$PROJECT_DIR$/utils" />
           </set>

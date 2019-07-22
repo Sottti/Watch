@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+apply from: '../scripts/build_types.gradle'
+apply from: '../scripts/android_library_module.gradle'
+
+dependencies {
+    implementation deps.test.junit
+    implementation deps.test.hamcrest
+    implementation deps.test.mockito.core
+    implementation deps.test.mockito.inline
+
+    implementation deps.kotlin.x.coroutines.test
+
+    implementation deps.google.android.x.architecture.core.testing
+}

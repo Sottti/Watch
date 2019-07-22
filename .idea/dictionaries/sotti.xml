@@ -2,6 +2,7 @@
   <dictionary name="sotti">
     <words>
       <w>constraintlayout</w>
+      <w>coroutines</w>
       <w>keyline</w>
       <w>linkedin</w>
       <w>moshi</w>

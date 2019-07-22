@@ -11,4 +11,6 @@ dependencies {
     testImplementation deps.test.mockito.inline
 
     testImplementation deps.kotlin.x.coroutines.test
+
+    testImplementation deps.google.android.x.architecture.core.testing
 }

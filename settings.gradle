@@ -12,5 +12,6 @@ include ':app',
         ':ui-resources',
         ':utils',
         ':android-tests-common',
+        ':tests-common',
 
 rootProject.name = 'Watch'
