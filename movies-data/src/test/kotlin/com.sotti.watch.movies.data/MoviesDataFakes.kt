@@ -69,10 +69,13 @@ internal object MoviesDataFakes {
         results = emptySet()
     )
 
-    val servicePopularMoviesResponse_withMovies = Response.success(popularMovies)
-    val popularMoviesResponse_notFound = Response.success(popularMovies_emptySet)
-    val popularMoviesResponse_null = Response.success<PopularMoviesResponseAM>(null)
-    val popularMoviesResponse_error = Response.error<PopularMoviesResponseAM>(404, "".toResponseBody())
+    val servicePopularMoviesResponse_withMovies: Response<PopularMoviesResponseAM> =
+        Response.success(popularMovies)
+    val popularMoviesResponse_notFound: Response<PopularMoviesResponseAM> =
+        Response.success(popularMovies_emptySet)
+    val popularMoviesResponse_null: Response<PopularMoviesResponseAM> = Response.success(null)
+    val popularMoviesResponse_error: Response<PopularMoviesResponseAM> =
+        Response.error(404, "".toResponseBody())
 
     val apiDSResult = SuccessLoadingMoviesDM(popularMovies.results.toDM())
 

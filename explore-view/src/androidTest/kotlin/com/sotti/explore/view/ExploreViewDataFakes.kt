@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection")
+
 package com.sotti.explore.view
 
 import com.sotti.watch.explore.view.MovieOverviewUIM
