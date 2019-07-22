@@ -4,7 +4,6 @@ apply from: '../scripts/android_library_module.gradle'
 
 dependencies {
     implementation deps.test.junit
-    implementation deps.test.hamcrest
     implementation deps.test.mockito.core
     implementation deps.test.mockito.inline
 
