@@ -16,8 +16,9 @@ Included in the app as well, you can find my thoughts about different aspects of
 Execute the next gradle tasks from the terminal.
 
 For executing all unit --> `gradlew testLiveDebugUnitTest`
+
 For executing all android tests --> `gradlew connectedLiveDebugAndroidTest --no-parallel`
 
 ## License
 
-The contents of this repository are covered under the [https://en.wikipedia.org/wiki/MIT_License](LICENSE).
+The contents of this repository are covered under the [MIT license](https://en.wikipedia.org/wiki/MIT_License).
