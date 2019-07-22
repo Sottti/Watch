@@ -9,5 +9,3 @@ fun View.setSelectableItemBackground() {
     context.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
     setBackgroundResource(outValue.resourceId)
 }
-
-fun View.dimensToPx(@DimenRes dimensResId : Int)  = resources.getDimension(dimensResId).toInt()
