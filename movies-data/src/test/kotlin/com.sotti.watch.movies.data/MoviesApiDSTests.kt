@@ -1,5 +1,10 @@
 package com.sotti.watch.movies.data
 
+import com.sotti.watch.movies.data.MoviesDataFakes.apiDSResult
+import com.sotti.watch.movies.data.MoviesDataFakes.popularMoviesResponse_error
+import com.sotti.watch.movies.data.MoviesDataFakes.popularMoviesResponse_notFound
+import com.sotti.watch.movies.data.MoviesDataFakes.popularMoviesResponse_null
+import com.sotti.watch.movies.data.MoviesDataFakes.servicePopularMoviesResponse_withMovies
 import com.sotti.watch.movies.data.datasources.MoviesDataSources
 import com.sotti.watch.movies.data.datasources.remote.MoviesApiDS
 import com.sotti.watch.movies.data.datasources.remote.TmdbApiService
