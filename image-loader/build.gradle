@@ -6,6 +6,6 @@ dependencies {
     implementation deps.google.glide.runtime
     kapt deps.google.glide.compiler
 
-    implementation project (":utils")
-    implementation project (':ui-resources')
+    implementation project(":utils")
+    implementation project(':ui-resources')
 }

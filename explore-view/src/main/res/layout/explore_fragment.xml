@@ -40,10 +40,10 @@
             tools:visibility="gone" />
 
         <com.sotti.watch.empty.view.EmptyView
-            android:visibility="@{uiModel.emptyViewVisibility}"
             android:id="@+id/empty_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:visibility="@{uiModel.emptyViewVisibility}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

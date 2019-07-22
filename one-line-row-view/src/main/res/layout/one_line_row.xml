@@ -20,7 +20,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_outline_bluetooth_24dp" />
+            app:srcCompat="@drawable/ic_outline_bluetooth_24dp"
+            tools:tint="@color/icon_black_inactive" />
 
         <TextView
             android:id="@+id/text"

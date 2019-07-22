@@ -128,7 +128,6 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="@dimen/vertical_keyline_primary"
                     android:layout_marginEnd="@dimen/vertical_keyline_primary"
-                    android:elevation="24dp"
                     app:layout_constraintBottom_toBottomOf="@id/card_bottom_reference"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

@@ -14,4 +14,4 @@ include ':app',
         ':android-tests-common',
         ':tests-common',
 
-rootProject.name = 'Watch'
+        rootProject.name = 'Watch'

@@ -1,6 +1,5 @@
 package com.sotti.watch.movies.data
 
-import com.sotti.watch.network.common.networkCommonModule
 import com.sotti.watch.movies.data.datasources.MoviesDataSources
 import com.sotti.watch.movies.data.datasources.local.MoviesRoomDS
 import com.sotti.watch.movies.data.datasources.remote.MoviesApiDS
@@ -8,6 +7,7 @@ import com.sotti.watch.movies.data.datasources.remote.TmdbApiService
 import com.sotti.watch.movies.data.datasources.remote.TmdbApiServiceImpl
 import com.sotti.watch.movies.data.repository.MoviesRepository
 import com.sotti.watch.movies.data.repository.MoviesRepositoryImpl
+import com.sotti.watch.network.common.networkCommonModule
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
 

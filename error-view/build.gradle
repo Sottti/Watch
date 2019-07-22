@@ -7,6 +7,6 @@ dependencies {
     implementation deps.google.android.x.foundation.core
     implementation deps.google.android.x.ui.constraintLayout
 
-    implementation project (':utils')
-    implementation project (':ui-resources')
+    implementation project(':utils')
+    implementation project(':ui-resources')
 }

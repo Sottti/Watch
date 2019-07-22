@@ -8,8 +8,8 @@ dependencies {
 
     implementation deps.kotlin.x.coroutines.core
 
-    implementation project (':utils')
-    implementation project (':tests-common')
-    implementation project (':movies-domain')
-    implementation project (':network-common')
+    implementation project(':utils')
+    implementation project(':tests-common')
+    implementation project(':movies-domain')
+    implementation project(':network-common')
 }
