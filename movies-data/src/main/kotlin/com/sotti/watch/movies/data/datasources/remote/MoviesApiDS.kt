@@ -13,9 +13,7 @@ internal class MoviesApiDS(private val service: TmdbApiService) : MoviesDataSour
             with(service.loadPopularMovies()) {
                 val response = body()
                 if (isSuccessful && response != null) {
-                    if (response.hasMovies()) SuccessLoadingMoviesDM(
-                        response.results.toDM()
-                    )
+                    if (response.hasMovies()) SuccessLoadingMoviesDM(response.results.toDM())
                     else NoMoviesFoundDM
                 } else ErrorLoadingMoviesDM
             }
