@@ -67,7 +67,7 @@ buildscript {
                                                     liveData : "androidx.lifecycle:lifecycle-livedata:$rootProject.ext.versions.lifecycle"
                                             ],
                                             core      : [
-                                                    testing: "androidx.arch.core:core-testing:2.1.0-beta01"
+                                                    testing: "androidx.arch.core:core-testing:2.1.0-rc01"
                                             ],
                                             navigation: [
                                                     ui      : "androidx.navigation:navigation-ui-ktx:$rootProject.ext.versions.navigation",
