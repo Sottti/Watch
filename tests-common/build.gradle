@@ -10,4 +10,8 @@ dependencies {
     implementation deps.kotlin.x.coroutines.test
 
     implementation deps.google.android.x.architecture.core.testing
+
+    implementation deps.google.android.x.architecture.lifecycle.liveData
+
+    implementation deps.google.truth
 }
