@@ -22,6 +22,7 @@ dependencies {
     implementation project(':movies-data')
     implementation project(':ui-resources')
     implementation project(':image-loader')
+    implementation project(':tests-common')
     implementation project(':movies-domain')
     implementation project(':android-tests-common')
 }
