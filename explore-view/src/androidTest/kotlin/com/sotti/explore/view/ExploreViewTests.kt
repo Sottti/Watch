@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers
@@ -35,7 +36,7 @@ import org.koin.dsl.module
 @RunWith(AndroidJUnit4::class)
 internal class ExploreViewTests {
 
-    private val fakeViewModel = FakeExploreViewModel()
+    private val viewModelFake = FakeExploreViewModel()
     private lateinit var scenario: FragmentScenario<ExploreFragment>
 
     private val progressBar = onView(ViewMatchers.withId(R.id.progress_bar))
@@ -58,31 +59,6 @@ internal class ExploreViewTests {
     private val errorViewTitle = onView(ViewMatchers.withId(R.id.error_view_subtitle))
     private val errorViewRetryButton = onView(ViewMatchers.withId(R.id.error_view_retry))
 
-    private val singleMovie = listOf(theMatrix)
-
-    private val twentyMovies = listOf(
-        theMatrix,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        groundhogDay,
-        fightClub
-    )
-
     @Before
     fun setUp() {
         startKoin {
@@ -92,7 +68,7 @@ internal class ExploreViewTests {
         loadKoinModules(module {
             viewModel {
                 @Suppress("USELESS_CAST")
-                fakeViewModel as ExploreViewModel
+                viewModelFake as ExploreViewModel
             }
         })
     }
@@ -104,14 +80,14 @@ internal class ExploreViewTests {
 
     @Test
     fun showsProgressBar_portrait() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.LOADING)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.LOADING)
         launchFragment().asPortrait()
         checkJustProgressBarIsVisible()
     }
 
     @Test
     fun showsProgressBar_landscape() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.LOADING)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.LOADING)
         launchFragment().asLandscape()
         checkJustProgressBarIsVisible()
     }
@@ -125,7 +101,7 @@ internal class ExploreViewTests {
 
     @Test
     fun showsErrorView_portrait() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.ERROR)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.ERROR)
         launchFragment().asPortrait()
         checkJustErrorViewIsVisible()
         checkErrorViewElementsAreVisible()
@@ -133,7 +109,7 @@ internal class ExploreViewTests {
 
     @Test
     fun showsErrorView_landscape() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.ERROR)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.ERROR)
         launchFragment().asLandscape()
         checkJustErrorViewIsVisible()
         checkErrorViewElementsAreVisible()
@@ -156,7 +132,7 @@ internal class ExploreViewTests {
 
     @Test
     fun showsEmptyView_portrait() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.EMPTY)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.EMPTY)
         launchFragment().asPortrait()
         checkJustEmptyViewIsVisible()
         checkEmptyViewElementsAreVisible()
@@ -164,7 +140,7 @@ internal class ExploreViewTests {
 
     @Test
     fun showsEmptyView_landscape() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.EMPTY)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.EMPTY)
         launchFragment().asLandscape()
         checkJustEmptyViewIsVisible()
         checkEmptyViewElementsAreVisible()
@@ -186,20 +162,20 @@ internal class ExploreViewTests {
 
     @Test
     fun listItemContentIsVisible_portrait() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.CONTENT)
-        fakeViewModel.setContent(singleMovie)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.CONTENT)
+        viewModelFake.setContent(singleMovieMatrix)
         launchFragment().asPortrait()
         checkJustContentIsVisible()
-        checkListItemContent(singleMovie[0])
+        checkListItemContent(singleMovieMatrix[0])
     }
 
     @Test
     fun listItemContentIsVisible_landscape() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.CONTENT)
-        fakeViewModel.setContent(singleMovie)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.CONTENT)
+        viewModelFake.setContent(singleMovieMatrix)
         launchFragment().asLandscape()
         checkJustContentIsVisible()
-        checkListItemContent(singleMovie[0])
+        checkListItemContent(singleMovieMatrix[0])
     }
 
     private fun checkJustContentIsVisible() {
@@ -227,16 +203,16 @@ internal class ExploreViewTests {
 
     @Test
     fun contentCanScroll_portrait() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.CONTENT)
-        fakeViewModel.setContent(twentyMovies)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.CONTENT)
+        viewModelFake.setContent(twentyMovies)
         launchFragment().asPortrait()
         checkCanScroll()
     }
 
     @Test
     fun contentCanScroll_landscape() {
-        fakeViewModel.setMode(FakeExploreViewModel.Mode.CONTENT)
-        fakeViewModel.setContent(twentyMovies)
+        viewModelFake.setMode(FakeExploreViewModel.Mode.CONTENT)
+        viewModelFake.setContent(twentyMovies)
         launchFragment().asPortrait()
         checkCanScroll()
     }
@@ -252,6 +228,28 @@ internal class ExploreViewTests {
         )
     }
 
+    @Test
+    fun checkRetryWorks_portrait() {
+        viewModelFake.setMode(FakeExploreViewModel.Mode.RETRY)
+        viewModelFake.setContent(twentyMovies)
+        launchFragment().asPortrait()
+        checkRetryWorks()
+    }
+
+    @Test
+    fun checkRetryWorks_landscape() {
+        viewModelFake.setMode(FakeExploreViewModel.Mode.RETRY)
+        viewModelFake.setContent(twentyMovies)
+        launchFragment().asLandscape()
+        checkRetryWorks()
+    }
+
+    private fun checkRetryWorks() {
+        checkJustErrorViewIsVisible()
+        errorViewRetryButton.perform(click())
+        checkJustContentIsVisible()
+    }
+
     private fun launchFragment(): FragmentScenario<ExploreFragment> {
         scenario =
             launchFragmentInContainer(
@@ -260,5 +258,4 @@ internal class ExploreViewTests {
             )
         return scenario
     }
-
 }

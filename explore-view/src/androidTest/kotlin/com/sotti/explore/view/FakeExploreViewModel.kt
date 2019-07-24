@@ -20,7 +20,8 @@ internal class FakeExploreViewModel : ExploreViewModel() {
         LOADING,
         ERROR,
         EMPTY,
-        CONTENT
+        CONTENT,
+        RETRY
     }
 
     fun setContent(movies: List<MovieOverviewUIM>) {
@@ -37,10 +38,14 @@ internal class FakeExploreViewModel : ExploreViewModel() {
             Mode.ERROR -> _viewState.value = ErrorLoadingUIM
             Mode.EMPTY -> _viewState.value = NoMoviesFoundUIM
             Mode.CONTENT -> _viewState.value = SuccessLoadingUIM(movies)
+            Mode.RETRY -> _viewState.value = ErrorLoadingUIM
         }
     }
 
     override fun onRetry() {
-
+        when (mode) {
+            Mode.RETRY -> _viewState.value = SuccessLoadingUIM(movies)
+            else -> _viewState.value = ErrorLoadingUIM
+        }
     }
 }

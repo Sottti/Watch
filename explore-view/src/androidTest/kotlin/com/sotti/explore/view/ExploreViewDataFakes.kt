@@ -36,3 +36,28 @@ internal val fightClub =
                 " underground \\\"fight clubs\\\" forming in every town, until an eccentric gets in" +
                 " the way and ignites an out-of-control spiral toward oblivion."
     )
+
+internal val singleMovieMatrix = listOf(theMatrix)
+
+internal val twentyMovies = listOf(
+    theMatrix,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    groundhogDay,
+    fightClub
+)
