@@ -24,7 +24,7 @@ import org.koin.core.context.stopKoin
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-internal class AboutViewTests {
+internal class AboutFragmentTests {
 
     private lateinit var scenario: FragmentScenario<AboutFragment>
 

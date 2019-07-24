@@ -34,7 +34,7 @@ import org.koin.dsl.module
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-internal class ExploreViewTests {
+internal class ExploreFragmentTests {
 
     private val viewModelFake = FakeExploreViewModel()
     private lateinit var scenario: FragmentScenario<ExploreFragment>

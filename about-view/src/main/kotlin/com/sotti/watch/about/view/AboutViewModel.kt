@@ -1,5 +1,6 @@
 package com.sotti.watch.about.view
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.sotti.watch.about.view.AboutViewActions.OpenSocialMediaProfile
@@ -11,7 +12,8 @@ import com.sotti.watch.utils.exhaustive
 internal class AboutViewModel : ViewModel() {
 
     companion object {
-        private const val easterEggInteractionsThreshold = 7
+        @VisibleForTesting
+        internal const val easterEggInteractionsThreshold = 7
     }
 
     private var easterEggInteractionsCount = 0
@@ -35,11 +37,11 @@ internal class AboutViewModel : ViewModel() {
 
 
     private fun getUrl(intent: AboutViewIntents) = when (intent) {
-        OnOpenGithubProfile -> "https://github.com/Sottti"
-        OnOpenMediumProfile -> "https://medium.com/@sotti"
-        OnOpenTwitterProfile -> "https://twitter.com/Sotttti"
-        OnOpenLinkedInProfile -> "https://uk.linkedin.com/in/sotti"
-        OnOpenStackOverflowProfile -> "https://stackoverflow.com/users/1177959/sotti"
+        OnOpenGithubProfile -> githubUri
+        OnOpenMediumProfile -> mediumUri
+        OnOpenTwitterProfile -> twitterUri
+        OnOpenLinkedInProfile -> linkedInUri
+        OnOpenStackOverflowProfile -> stackOverflowUri
         OnShowEasterEgg -> throw IllegalArgumentException("The OnShowEasterEgg intent shouldn't reach this when statement")
     }.exhaustive
 }

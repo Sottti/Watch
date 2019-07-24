@@ -19,6 +19,7 @@ dependencies {
 
     implementation project(':utils')
     implementation project(':intents')
+    implementation project(':tests-common')
     implementation project(':one-line-row-view')
     implementation project(':android-tests-common')
 }
