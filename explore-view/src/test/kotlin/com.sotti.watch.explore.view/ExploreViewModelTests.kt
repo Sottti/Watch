@@ -7,11 +7,9 @@ import com.sotti.watch.movies.domain.NoMoviesFoundDM
 import com.sotti.watch.movies.domain.SuccessLoadingMoviesDM
 import com.sotti.watch.tests.common.CoroutinesTestRule
 import com.sotti.watch.tests.common.captureValues
-import com.sotti.watch.tests.common.getValueForTest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
-import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
