@@ -6,6 +6,7 @@ import com.sotti.watch.movies.domain.ErrorLoadingMoviesDM
 import com.sotti.watch.movies.domain.NoMoviesFoundDM
 import com.sotti.watch.movies.domain.SuccessLoadingMoviesDM
 import com.sotti.watch.tests.common.CoroutinesTestRule
+import com.sotti.watch.tests.common.captureValues
 import com.sotti.watch.tests.common.getValueForTest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -45,10 +46,12 @@ internal class ExploreViewModelTests {
             runBlockingTest {
                 `when`(moviesRepository.loadPopularMovies()).thenReturn(NoMoviesFoundDM)
                 pauseDispatcher()
-                assertEquals(viewModel.viewState.getValueForTest(), LoadingUIM)
-                resumeDispatcher()
-                assertEquals(viewModel.viewState.getValueForTest(), NoMoviesFoundUIM)
-                verify(moviesRepository, times(2)).loadPopularMovies()
+                viewModel.viewState.captureValues {
+                    assertSendsValues(LoadingUIM)
+                    resumeDispatcher()
+                    assertSendsValues(LoadingUIM, NoMoviesFoundUIM)
+                    verify(moviesRepository, times(1)).loadPopularMovies()
+                }
             }
         }
     }
@@ -59,10 +62,12 @@ internal class ExploreViewModelTests {
             runBlockingTest {
                 `when`(moviesRepository.loadPopularMovies()).thenReturn(ErrorLoadingMoviesDM)
                 pauseDispatcher()
-                assertEquals(viewModel.viewState.getValueForTest(), LoadingUIM)
-                resumeDispatcher()
-                assertEquals(viewModel.viewState.getValueForTest(), ErrorLoadingUIM)
-                verify(moviesRepository, times(2)).loadPopularMovies()
+                viewModel.viewState.captureValues {
+                    assertSendsValues(LoadingUIM)
+                    resumeDispatcher()
+                    assertSendsValues(LoadingUIM, ErrorLoadingUIM)
+                    verify(moviesRepository, times(1)).loadPopularMovies()
+                }
             }
         }
     }
@@ -77,10 +82,12 @@ internal class ExploreViewModelTests {
                     )
                 )
                 pauseDispatcher()
-                assertEquals(viewModel.viewState.getValueForTest(), LoadingUIM)
-                resumeDispatcher()
-                assertEquals(viewModel.viewState.getValueForTest(), SuccessLoadingUIM(emptyList()))
-                verify(moviesRepository, times(2)).loadPopularMovies()
+                viewModel.viewState.captureValues {
+                    assertSendsValues(LoadingUIM)
+                    resumeDispatcher()
+                    assertSendsValues(LoadingUIM, SuccessLoadingUIM(emptyList()))
+                    verify(moviesRepository, times(1)).loadPopularMovies()
+                }
             }
         }
     }

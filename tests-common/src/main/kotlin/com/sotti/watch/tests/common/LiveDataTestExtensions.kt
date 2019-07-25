@@ -43,7 +43,7 @@ class LiveDataValueCapture<T> {
         channel.offer(value)
     }
 
-    suspend fun assertSendsValues(timeout: Long, vararg expected: T?) {
+    suspend fun assertSendsValues(vararg expected: T?, timeout: Long = 0) {
         val expectedList = expected.asList()
         if (values == expectedList) {
             return
