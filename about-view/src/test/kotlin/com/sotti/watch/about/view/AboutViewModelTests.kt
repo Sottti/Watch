@@ -10,6 +10,8 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import com.sotti.watch.about.view.AboutViewIntents.*
+import com.sotti.watch.about.view.AboutViewActions.*
 
 @ExperimentalCoroutinesApi
 internal class AboutViewModelTests {
@@ -31,10 +33,10 @@ internal class AboutViewModelTests {
     fun whenOpenGithub_triggersOpenGithubAction() {
         with(coroutinesTestRule.testDispatcher) {
             runBlockingTest {
-                viewModel.onIntent(AboutViewIntents.OnOpenGithubProfile)
+                viewModel.onIntent(OnOpenGithubProfile)
                 Assert.assertEquals(
                     viewModel.actions.getValueForTest(),
-                    AboutViewActions.OpenSocialMediaProfile(githubUri)
+                    OpenSocialMediaProfile(githubUri)
                 )
             }
         }
@@ -44,10 +46,10 @@ internal class AboutViewModelTests {
     fun whenOpenMedium_triggersOpenMediumAction() {
         with(coroutinesTestRule.testDispatcher) {
             runBlockingTest {
-                viewModel.onIntent(AboutViewIntents.OnOpenMediumProfile)
+                viewModel.onIntent(OnOpenMediumProfile)
                 Assert.assertEquals(
                     viewModel.actions.getValueForTest(),
-                    AboutViewActions.OpenSocialMediaProfile(mediumUri)
+                    OpenSocialMediaProfile(mediumUri)
                 )
             }
         }
@@ -57,10 +59,10 @@ internal class AboutViewModelTests {
     fun whenOpenTwitter_triggersOpenTwitterAction() {
         with(coroutinesTestRule.testDispatcher) {
             runBlockingTest {
-                viewModel.onIntent(AboutViewIntents.OnOpenTwitterProfile)
+                viewModel.onIntent(OnOpenTwitterProfile)
                 Assert.assertEquals(
                     viewModel.actions.getValueForTest(),
-                    AboutViewActions.OpenSocialMediaProfile(twitterUri)
+                    OpenSocialMediaProfile(twitterUri)
                 )
             }
         }
@@ -70,10 +72,10 @@ internal class AboutViewModelTests {
     fun whenOpenLinkedIn_triggersOpenLinkedInAction() {
         with(coroutinesTestRule.testDispatcher) {
             runBlockingTest {
-                viewModel.onIntent(AboutViewIntents.OnOpenLinkedInProfile)
+                viewModel.onIntent(OnOpenLinkedInProfile)
                 Assert.assertEquals(
                     viewModel.actions.getValueForTest(),
-                    AboutViewActions.OpenSocialMediaProfile(linkedInUri)
+                    OpenSocialMediaProfile(linkedInUri)
                 )
             }
         }
@@ -83,10 +85,10 @@ internal class AboutViewModelTests {
     fun whenOpenStackOverflow_triggersOpenStackOverflowAction() {
         with(coroutinesTestRule.testDispatcher) {
             runBlockingTest {
-                viewModel.onIntent(AboutViewIntents.OnOpenStackOverflowProfile)
+                viewModel.onIntent(OnOpenStackOverflowProfile)
                 Assert.assertEquals(
                     viewModel.actions.getValueForTest(),
-                    AboutViewActions.OpenSocialMediaProfile(stackOverflowUri)
+                    OpenSocialMediaProfile(stackOverflowUri)
                 )
             }
         }
@@ -97,11 +99,11 @@ internal class AboutViewModelTests {
         with(coroutinesTestRule.testDispatcher) {
             runBlockingTest {
                 repeat(easterEggInteractionsThreshold) {
-                    viewModel.onIntent(AboutViewIntents.OnShowEasterEgg)
+                    viewModel.onIntent(OnShowEasterEgg)
                 }
                 Assert.assertEquals(
                     viewModel.actions.getValueForTest(),
-                    AboutViewActions.ShowEasterEgg
+                    ShowEasterEgg
                 )
             }
         }
