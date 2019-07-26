@@ -1,6 +1,9 @@
 package com.sotti.watch.about.view
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.sotti.watch.about.view.AboutViewActions.OpenSocialMediaProfile
+import com.sotti.watch.about.view.AboutViewActions.ShowEasterEgg
+import com.sotti.watch.about.view.AboutViewIntents.*
 import com.sotti.watch.about.view.AboutViewModel.Companion.easterEggInteractionsThreshold
 import com.sotti.watch.tests.common.CoroutinesTestRule
 import com.sotti.watch.tests.common.getValueForTest
@@ -10,8 +13,6 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import com.sotti.watch.about.view.AboutViewIntents.*
-import com.sotti.watch.about.view.AboutViewActions.*
 
 @ExperimentalCoroutinesApi
 internal class AboutViewModelTests {
