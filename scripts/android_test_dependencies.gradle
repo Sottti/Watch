@@ -1,3 +1,10 @@
+android {
+    // This does nothing yet... And this time is not my fault
+    testOptions {
+        animationsDisabled true
+    }
+}
+
 dependencies {
     androidTestImplementation deps.google.android.x.foundation.test.espresso.core
     androidTestImplementation deps.google.android.x.foundation.test.espresso.contrib
