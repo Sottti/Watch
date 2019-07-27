@@ -7,7 +7,6 @@ import com.sotti.watch.movies.data.repository.MoviesRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 internal class ExploreViewModelImpl(
     private val moviesRepository: MoviesRepository,
@@ -23,10 +22,8 @@ internal class ExploreViewModelImpl(
 
     private fun loadPopularMovies() {
         _viewState.value = LoadingUIM
-        viewModelScope.launch {
-            _viewState.value = withContext(dispatcher) {
-                moviesRepository.loadPopularMovies().toUiModel()
-            }
+        viewModelScope.launch(dispatcher) {
+            _viewState.value = moviesRepository.loadPopularMovies().toUiModel()
         }
     }
 
