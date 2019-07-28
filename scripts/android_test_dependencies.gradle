@@ -8,7 +8,7 @@ dependencies {
     androidTestImplementation deps.google.android.x.foundation.test.junit
 
     // FragmentScenario throws if this is not declared
-    kaptAndroidTest 'androidx.databinding:databinding-compiler:3.4.2'
+    kaptAndroidTest 'androidx.databinding:databinding-compiler:3.5.0-rc01'
 
     androidTestImplementation(deps.koin.test) { exclude group: 'org.mockito' }
 
