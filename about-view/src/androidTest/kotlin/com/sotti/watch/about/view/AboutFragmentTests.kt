@@ -12,10 +12,12 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.sotti.watch.about.view.AboutFragment.Companion.ARG_AVOID_INJECTIONS
+import com.sotti.watch.android.tests.common.DisableAnimationsRule
 import com.sotti.watch.android.tests.common.asLandscape
 import com.sotti.watch.android.tests.common.asPortrait
 import org.junit.After
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.core.context.loadKoinModules
@@ -25,6 +27,9 @@ import org.koin.core.context.stopKoin
 @LargeTest
 @RunWith(AndroidJUnit4::class)
 internal class AboutFragmentTests {
+
+    @get:Rule
+    var disableAnimationsRule = DisableAnimationsRule()
 
     private lateinit var scenario: FragmentScenario<AboutFragment>
 

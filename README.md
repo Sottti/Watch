@@ -19,9 +19,6 @@ For executing all unit tests --> `gradlew testLiveDebugUnitTest`
 
 For executing all android tests --> `gradlew connectedLiveDebugAndroidTest --no-parallel`
 
-It's important to run the Android Tests with the animations disabled on the device.
-If the animations are enabled while while running the Android Tests, they can be flaky, or in the best case scenario slower.
-
 ## License
 
 The contents of this repository are covered under the [MIT license](https://en.wikipedia.org/wiki/MIT_License).

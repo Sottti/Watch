@@ -12,6 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import com.sotti.watch.android.tests.common.DisableAnimationsRule
 import com.sotti.watch.android.tests.common.asLandscape
 import com.sotti.watch.android.tests.common.asPortrait
 import com.sotti.watch.explore.view.ExploreFragment
@@ -24,6 +25,7 @@ import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.not
 import org.junit.After
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -35,6 +37,9 @@ import org.koin.dsl.module
 @LargeTest
 @RunWith(AndroidJUnit4::class)
 internal class ExploreFragmentTests {
+
+    @get:Rule
+    var disableAnimationsRule = DisableAnimationsRule()
 
     private val viewModelFake = FakeExploreViewModel()
     private lateinit var scenario: FragmentScenario<ExploreFragment>
