@@ -10,8 +10,7 @@ dependencies {
     implementation deps.google.android.x.foundation.test.rules
     implementation deps.google.android.x.foundation.test.runner
     implementation deps.google.android.x.foundation.test.junit
+    implementation deps.google.android.x.foundation.test.uiautomator
 
     implementation deps.google.android.x.ui.fragment.testing
-
-    implementation deps.google.android.uiautomator
 }
