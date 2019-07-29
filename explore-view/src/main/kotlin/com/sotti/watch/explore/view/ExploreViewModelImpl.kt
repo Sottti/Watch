@@ -24,7 +24,7 @@ internal class ExploreViewModelImpl(
     private fun loadPopularMovies() {
         _viewState.value = LoadingUIM
         viewModelScope.launch {
-            _viewState.value = withContext(Dispatchers.IO) {
+            _viewState.value = withContext(dispatcher) {
                 return@withContext moviesRepository.loadPopularMovies().toUiModel()
             }
         }
