@@ -83,7 +83,7 @@ buildscript {
                                                     testing : "androidx.fragment:fragment-testing:$rootProject.ext.versions.fragment",
                                             ],
                                             cardView          : "androidx.cardview:cardview:1.0.0",
-                                            material          : "com.google.android.material:material:1.1.0-alpha08",
+                                            material          : "com.google.android.material:material:1.1.0-alpha09",
                                             recyclerView      : "androidx.recyclerview:recyclerview:1.1.0-beta01",
                                             constraintLayout  : "androidx.constraintlayout:constraintlayout:2.0.0-beta2",
                                             swipeRefreshLayout: "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha01",
