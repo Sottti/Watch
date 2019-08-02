@@ -110,7 +110,7 @@ buildscript {
                             moshiConverter: "com.squareup.retrofit2:converter-moshi:$rootProject.ext.versions.retrofit"
                     ],
                     picasso   : "com.squareup.picasso:picasso:2.5.2",
-                    leakCanary: "com.squareup.leakcanary:leakcanary-android:2.0-alpha-3"
+                    leakCanary: "com.squareup.leakcanary:leakcanary-android:2.0-beta-1"
             ],
             koin           : [
                     core     : "org.koin:koin-core:$rootProject.ext.versions.koin",
@@ -139,7 +139,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0-rc01'
+        classpath 'com.android.tools.build:gradle:3.5.0-rc02'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$rootProject.ext.versions.kotlin.stdlib"
     }
 }
