@@ -110,7 +110,7 @@ buildscript {
                             moshiConverter: "com.squareup.retrofit2:converter-moshi:$rootProject.ext.versions.retrofit"
                     ],
                     picasso   : "com.squareup.picasso:picasso:2.5.2",
-                    leakCanary: "com.squareup.leakcanary:leakcanary-android:2.0-beta-1"
+                    leakCanary: "com.squareup.leakcanary:leakcanary-android:2.0-beta-2"
             ],
             koin           : [
                     core     : "org.koin:koin-core:$rootProject.ext.versions.koin",
