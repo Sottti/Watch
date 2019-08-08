@@ -8,7 +8,7 @@ buildscript {
 
             espresso    : '3.3.0-alpha02',
             testAndRules: '1.3.0-alpha02',
-            lifecycle   : '2.2.0-alpha02',
+            lifecycle   : '2.2.0-alpha03',
             dagger      : '2.23.1',
             mockito     : '3.0.0',
             okhttp      : '4.0.1',
