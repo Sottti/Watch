@@ -77,7 +77,7 @@ buildscript {
                                             ]
                                     ],
                                     ui          : [
-                                            customTabs        : "androidx.browser:browser:1.0.0",
+                                            customTabs        : "androidx.browser:browser:1.2.0-alpha07",
                                             fragment          : [
                                                     fragment: "androidx.fragment:fragment-ktx:$rootProject.ext.versions.fragment",
                                                     testing : "androidx.fragment:fragment-testing:$rootProject.ext.versions.fragment",
