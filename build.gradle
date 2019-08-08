@@ -12,7 +12,7 @@ buildscript {
             dagger      : '2.23.1',
             mockito     : '3.0.0',
             okhttp      : '4.0.1',
-            fragment    : '1.2.0-alpha01',
+            fragment    : '1.2.0-alpha02',
             retrofit    : '2.6.1',
             koin        : '2.0.1',
             glide       : '4.9.0',
