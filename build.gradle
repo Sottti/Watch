@@ -84,7 +84,7 @@ buildscript {
                                             ],
                                             cardView          : "androidx.cardview:cardview:1.0.0",
                                             material          : "com.google.android.material:material:1.1.0-alpha09",
-                                            recyclerView      : "androidx.recyclerview:recyclerview:1.1.0-beta01",
+                                            recyclerView      : "androidx.recyclerview:recyclerview:1.1.0-beta02",
                                             constraintLayout  : "androidx.constraintlayout:constraintlayout:2.0.0-beta2",
                                             swipeRefreshLayout: "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha01",
                                             coordinatorLayout : "androidx.coordinatorlayout:coordinatorlayout:1.1.0-beta01",
