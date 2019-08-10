@@ -16,16 +16,17 @@
             <option value="$PROJECT_DIR$/common/tests-common" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/data/movies-data" />
+            <option value="$PROJECT_DIR$/design" />
+            <option value="$PROJECT_DIR$/design/empty-view" />
+            <option value="$PROJECT_DIR$/design/error-view" />
+            <option value="$PROJECT_DIR$/design/one-line-row-view" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/domain/movies-domain" />
-            <option value="$PROJECT_DIR$/empty-view" />
-            <option value="$PROJECT_DIR$/error-view" />
-            <option value="$PROJECT_DIR$/features" />
-            <option value="$PROJECT_DIR$/features/about-view" />
-            <option value="$PROJECT_DIR$/features/explore-view" />
             <option value="$PROJECT_DIR$/image-loader" />
             <option value="$PROJECT_DIR$/intents" />
-            <option value="$PROJECT_DIR$/one-line-row-view" />
+            <option value="$PROJECT_DIR$/presentation" />
+            <option value="$PROJECT_DIR$/presentation/about-view" />
+            <option value="$PROJECT_DIR$/presentation/explore-view" />
             <option value="$PROJECT_DIR$/ui-resources" />
             <option value="$PROJECT_DIR$/utils" />
           </set>

@@ -38,6 +38,6 @@ dependencies {
     implementation deps.google.android.x.architecture.navigation.fragment
 
     implementation project(':ui-resources')
-    implementation project(':features:about-view')
-    implementation project(':features:explore-view')
+    implementation project(':presentation:about-view')
+    implementation project(':presentation:explore-view')
 }
