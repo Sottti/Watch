@@ -19,7 +19,7 @@ buildscript {
             navigation  : '2.2.0-alpha01',
             room        : '2.2.0-alpha02',
             kotlin      : [
-                    coroutines: '1.3.0-M2',
+                    coroutines: '1.3.0-RC2',
                     stdlib    : '1.3.41'
             ]
     ]
