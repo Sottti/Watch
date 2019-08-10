@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
-apply from: '../scripts/build_types.gradle'
-apply from: '../scripts/test_dependencies.gradle'
-apply from: '../scripts/android_library_module.gradle'
-apply from: '../scripts/android_test_dependencies.gradle'
+apply from: '../../scripts/build_types.gradle'
+apply from: '../../scripts/test_dependencies.gradle'
+apply from: '../../scripts/android_library_module.gradle'
+apply from: '../../scripts/android_test_dependencies.gradle'
 
 dependencies {
     implementation deps.koin.android
@@ -19,7 +19,7 @@ dependencies {
 
     implementation project(':utils')
     implementation project(':intents')
-    implementation project(':tests-common')
+    implementation project(':common:tests-common')
     implementation project(':one-line-row-view')
-    implementation project(':android-tests-common')
+    implementation project(':common:android-tests-common')
 }

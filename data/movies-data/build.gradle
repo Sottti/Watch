@@ -1,0 +1,15 @@
+apply plugin: 'com.android.library'
+apply from: '../../scripts/build_types.gradle'
+apply from: '../../scripts/test_dependencies.gradle'
+apply from: '../../scripts/android_library_module.gradle'
+
+dependencies {
+    implementation deps.koin.core
+
+    implementation deps.kotlin.x.coroutines.core
+
+    implementation project(':utils')
+    implementation project(':common:tests-common')
+    implementation project(':common:network-common')
+    implementation project(':domain:movies-domain')
+}

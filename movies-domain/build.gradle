@@ -1,3 +1,0 @@
-apply plugin: 'com.android.library'
-apply from: '../scripts/build_types.gradle'
-apply from: '../scripts/android_library_module.gradle'

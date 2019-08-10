@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.sotti.watch.about.view.AboutViewActions.OpenSocialMediaProfile
 import com.sotti.watch.about.view.AboutViewActions.ShowEasterEgg
-import com.sotti.watch.about.view.AboutViewIntents.*
 import com.sotti.watch.about.view.databinding.AboutFragmentBinding
 import com.sotti.watch.intents.loadChromeCustomTab
 import com.sotti.watch.utils.dpToPixel
@@ -62,12 +61,12 @@ internal class AboutFragment : Fragment() {
 
     private fun setClickListeners() {
         with(viewBinding) {
-            github.setOnClickListener { viewModel.onIntent(OnOpenGithubProfile) }
-            medium.setOnClickListener { viewModel.onIntent(OnOpenMediumProfile) }
-            twitter.setOnClickListener { viewModel.onIntent(OnOpenTwitterProfile) }
-            linkedin.setOnClickListener { viewModel.onIntent(OnOpenLinkedInProfile) }
-            stackoverflow.setOnClickListener { viewModel.onIntent(OnOpenStackOverflowProfile) }
-            profileImage.setOnClickListener { viewModel.onIntent(OnShowEasterEgg) }
+            github.setOnClickListener { viewModel.onIntent(AboutViewIntents.OnOpenGithubProfile) }
+            medium.setOnClickListener { viewModel.onIntent(AboutViewIntents.OnOpenMediumProfile) }
+            twitter.setOnClickListener { viewModel.onIntent(AboutViewIntents.OnOpenTwitterProfile) }
+            linkedin.setOnClickListener { viewModel.onIntent(AboutViewIntents.OnOpenLinkedInProfile) }
+            stackoverflow.setOnClickListener { viewModel.onIntent(AboutViewIntents.OnOpenStackOverflowProfile) }
+            profileImage.setOnClickListener { viewModel.onIntent(AboutViewIntents.OnShowEasterEgg) }
         }
     }
 }

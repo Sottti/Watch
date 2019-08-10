@@ -9,19 +9,23 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Watch" />
-            <option value="$PROJECT_DIR$/about-view" />
-            <option value="$PROJECT_DIR$/android-tests-common" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/common/android-tests-common" />
+            <option value="$PROJECT_DIR$/common/network-common" />
+            <option value="$PROJECT_DIR$/common/tests-common" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data/movies-data" />
+            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/domain/movies-domain" />
             <option value="$PROJECT_DIR$/empty-view" />
             <option value="$PROJECT_DIR$/error-view" />
-            <option value="$PROJECT_DIR$/explore-view" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/about-view" />
+            <option value="$PROJECT_DIR$/features/explore-view" />
             <option value="$PROJECT_DIR$/image-loader" />
             <option value="$PROJECT_DIR$/intents" />
-            <option value="$PROJECT_DIR$/movies-data" />
-            <option value="$PROJECT_DIR$/movies-domain" />
-            <option value="$PROJECT_DIR$/network-common" />
             <option value="$PROJECT_DIR$/one-line-row-view" />
-            <option value="$PROJECT_DIR$/tests-common" />
             <option value="$PROJECT_DIR$/ui-resources" />
             <option value="$PROJECT_DIR$/utils" />
           </set>
