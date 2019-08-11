@@ -26,18 +26,18 @@ android {
 }
 
 dependencies {
+    implementation deps.google.android.x.architecture.navigation.fragment
+    implementation deps.google.android.x.architecture.navigation.runtime
+    implementation deps.google.android.x.architecture.navigation.ui
+    implementation deps.google.android.x.foundation.appCompat
+    implementation deps.google.android.x.ui.constraintLayout
+    implementation deps.google.android.x.ui.material
 
     implementation deps.koin.android
+
     implementation deps.squareup.leakCanary
-
-    implementation deps.google.android.x.ui.material
-    implementation deps.google.android.x.ui.constraintLayout
-    implementation deps.google.android.x.foundation.appCompat
-    implementation deps.google.android.x.architecture.navigation.ui
-    implementation deps.google.android.x.architecture.navigation.runtime
-    implementation deps.google.android.x.architecture.navigation.fragment
-
-    implementation project(':ui-resources')
+    
     implementation project(':presentation:about-view')
     implementation project(':presentation:explore-view')
+    implementation project(':ui-resources')
 }

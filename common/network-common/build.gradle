@@ -5,10 +5,10 @@ apply from: '../../scripts/android_library_module.gradle'
 dependencies {
     implementation deps.koin.android
 
+    api deps.google.android.x.architecture.room.runtime
+    kapt deps.google.android.x.architecture.room.compiler
+
+    api deps.squareup.okhttp.loggingInterceptor
     api deps.squareup.okhttp.okhttp
     api deps.squareup.retrofit.moshiConverter
-    api deps.squareup.okhttp.loggingInterceptor
-
-    kapt deps.google.android.x.architecture.room.compiler
-    api deps.google.android.x.architecture.room.runtime
 }

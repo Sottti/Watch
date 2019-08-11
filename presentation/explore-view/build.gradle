@@ -5,24 +5,24 @@ apply from: '../../scripts/android_library_module.gradle'
 apply from: '../../scripts/android_test_dependencies.gradle'
 
 dependencies {
+    implementation deps.google.android.x.architecture.lifecycle.liveData
+    implementation deps.google.android.x.architecture.lifecycle.viewModel
+    implementation deps.google.android.x.foundation.appCompat
+    implementation deps.google.android.x.ui.constraintLayout
+    implementation deps.google.android.x.ui.fragment.fragment
+    implementation deps.google.android.x.ui.material
+    implementation deps.google.android.x.ui.recyclerView
+
     implementation deps.koin.android
     implementation deps.koin.viewModel
 
-    implementation deps.google.android.x.ui.material
-    implementation deps.google.android.x.ui.recyclerView
-    implementation deps.google.android.x.ui.constraintLayout
-    implementation deps.google.android.x.ui.fragment.fragment
-    implementation deps.google.android.x.foundation.appCompat
-    implementation deps.google.android.x.architecture.lifecycle.viewModel
-    implementation deps.google.android.x.architecture.lifecycle.liveData
-
-    implementation project(':utils')
+    implementation project(':common:android-tests-common')
+    implementation project(':common:tests-common')
+    implementation project(':data:movies-data')
     implementation project(':design:empty-view')
     implementation project(':design:error-view')
-    implementation project(':data:movies-data')
-    implementation project(':ui-resources')
-    implementation project(':image-loader')
-    implementation project(':common:tests-common')
     implementation project(':domain:movies-domain')
-    implementation project(':common:android-tests-common')
+    implementation project(':image-loader')
+    implementation project(':ui-resources')
+    implementation project(':utils')
 }

@@ -3,14 +3,13 @@ apply from: '../../scripts/build_types.gradle'
 apply from: '../../scripts/android_library_module.gradle'
 
 dependencies {
-    implementation deps.google.android.x.foundation.test.espresso.core
     implementation deps.google.android.x.foundation.test.espresso.contrib
+    implementation deps.google.android.x.foundation.test.espresso.core
     implementation deps.google.android.x.foundation.test.espresso.idlingResource
     implementation deps.google.android.x.foundation.test.espresso.intents
+    implementation deps.google.android.x.foundation.test.junit
     implementation deps.google.android.x.foundation.test.rules
     implementation deps.google.android.x.foundation.test.runner
-    implementation deps.google.android.x.foundation.test.junit
     implementation deps.google.android.x.foundation.test.uiautomator
-
     implementation deps.google.android.x.ui.fragment.testing
 }
