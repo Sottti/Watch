@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/intents" />
             <option value="$PROJECT_DIR$/presentation" />
             <option value="$PROJECT_DIR$/presentation/about-view" />
+            <option value="$PROJECT_DIR$/presentation/detail-view" />
             <option value="$PROJECT_DIR$/presentation/explore-view" />
             <option value="$PROJECT_DIR$/ui-resources" />
             <option value="$PROJECT_DIR$/utils" />
