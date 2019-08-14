@@ -1,6 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-buildscript {
+buildscript { 
+    ext.kotlin_version = '1.3.41'
+
     ext.versions = [
             minSdk      : 21,
             targetSdk   : 29,
@@ -31,7 +33,7 @@ buildscript {
                                     core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.versions.kotlin.coroutines",
                                     android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.ext.versions.kotlin.coroutines",
                                     test   : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.ext.versions.kotlin.coroutines"
-                            ],
+                            ]
                     ],
                     stdlib: [
                             jdk8: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.ext.versions.kotlin.stdlib"
@@ -93,7 +95,7 @@ buildscript {
                                                     vectorDrawableAnimated: "androidx.vectordrawable:vectordrawable-animated:1.1.0-beta02"
                                             ]
                                     ]
-                            ],
+                            ]
                     ],
                     glide  : [
                             runtime : "com.github.bumptech.glide:glide:$rootProject.ext.versions.glide",
@@ -126,7 +128,7 @@ buildscript {
                             inline : "org.mockito:mockito-inline:$rootProject.ext.versions.mockito"
                     ],
                     junit   : "junit:junit:4.13-beta-3",
-                    hamcrest: "org.hamcrest:hamcrest:2.1",
+                    hamcrest: "org.hamcrest:hamcrest:2.1"
             ],
             jakewharton    : [
                     timber: "com.jakewharton.timber:timber:4.7.1"
@@ -139,9 +141,9 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0-rc03'
+        classpath 'com.android.tools.build:gradle:3.6.0-alpha06'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$rootProject.ext.versions.kotlin.stdlib"
-    }
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" }
 }
 
 plugins {
