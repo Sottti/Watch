@@ -9,12 +9,20 @@ import com.sotti.watch.explore.view.databinding.ExploreMovieVhBinding
 internal sealed class ExploreItemVH(itemView: View) : RecyclerView.ViewHolder(itemView)
 
 internal class ExploreMovieVH(
-    private val viewBinding: ExploreMovieVhBinding
+    private val viewBinding: ExploreMovieVhBinding,
+    private val intentsListener: OnExploreItemIntentsListener
+
 ) : ExploreItemVH(viewBinding.root) {
 
+    init {
+        viewBinding.root.setOnClickListener { movieId?.let { intentsListener.showDetails(it) } }
+    }
+
+    private var movieId: Int? = null
     private var decorator: MovieOverViewUIMDecorator? = null
 
     fun onBind(movie: MovieOverviewUIM) {
+        movieId = movie.id
         with(viewBinding) {
             uiModel = recycleDecorator(movie)
             executePendingBindings()
@@ -29,4 +37,7 @@ internal class ExploreMovieVH(
             ).also { decorator = it }
         }
 
+    interface OnExploreItemIntentsListener {
+        fun showDetails(movieId: Int)
+    }
 }

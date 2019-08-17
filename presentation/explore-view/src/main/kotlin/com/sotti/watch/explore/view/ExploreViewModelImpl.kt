@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.sotti.watch.movies.data.repository.MoviesRepository
+import com.sotti.watch.utils.SingleLiveAction
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,7 +15,10 @@ internal class ExploreViewModelImpl(
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ExploreViewModel() {
 
-    override val _viewState = MutableLiveData<ExploreViewStateUIM>()
+    private val _viewEvents = SingleLiveAction<ExploreViewEventUIM>()
+    override val viewEvent: LiveData<ExploreViewEventUIM> = _viewEvents
+
+    private val _viewState = MutableLiveData<ExploreViewStateUIM>()
     override val viewState: LiveData<ExploreViewStateUIM>
         get() {
             loadPopularMovies()
@@ -28,6 +32,10 @@ internal class ExploreViewModelImpl(
                 return@withContext moviesRepository.loadPopularMovies().toUiModel()
             }
         }
+    }
+
+    override fun onMovieShowDetails(movieId: Int) {
+        _viewEvents.value = ShowMovieDetails(movieId)
     }
 
     override fun onRetry() {

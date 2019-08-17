@@ -5,6 +5,9 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.content.ContextCompat
 
+internal sealed class ExploreViewEventUIM
+internal data class ShowMovieDetails(val movieId : Int) : ExploreViewEventUIM()
+
 internal sealed class ExploreViewStateUIM {
     abstract val isProgressBarVisible: Boolean
     abstract val isErrorViewVisible: Boolean

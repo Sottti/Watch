@@ -24,7 +24,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="8"
             tools:listitem="@layout/explore_movie_vh"
-            tools:visibility="gone" />
+            tools:visibility="visible" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -48,7 +48,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
+            tools:visibility="gone" />
 
         <com.sotti.watch.error.view.ErrorView
             android:id="@+id/error_view"
