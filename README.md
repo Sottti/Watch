@@ -15,13 +15,7 @@ data/domain/presentation split. It captures a 2019 Android stack: XML views,
 Data Binding, AndroidX Navigation, Koin, coroutines, Retrofit, OkHttp, Moshi,
 Room-shaped data sources, and focused unit/instrumentation tests.
 
-## Screenshots
-
-| Explore | About |
-| --- | --- |
-| <img width="260" alt="Watch Explore screen showing movie rows" src="https://i.ibb.co/ysc82GW/Screenshot-1563618481.png" /> | <img width="260" alt="Watch About screen with profile links" src="https://i.ibb.co/ZmqG7Bm/Screenshot-1563618490.png" /> |
-
-## What It Demonstrates
+## ✨ What It Demonstrates
 
 - A multi-module Android app with separate app, presentation, domain, data,
   common, design, image loading, intents, utilities, and UI resource modules.
@@ -35,33 +29,13 @@ Room-shaped data sources, and focused unit/instrumentation tests.
 - Unit tests for mappers, repositories, ViewModels, and utilities.
 - Android tests for Explore and About UI behavior.
 
-## App Flow
+## 📷 Screenshots
 
-```mermaid
-flowchart LR
-    A["Bottom navigation"] --> B["ExploreFragment"]
-    B --> C["ExploreViewModel"]
-    C --> D["MoviesRepository"]
-    D --> E["Local data source"]
-    D --> F["TMDb remote data source"]
-    F --> G["Retrofit + OkHttp + Moshi"]
-    C --> H["ExploreViewStateUIM"]
-    H --> I["RecyclerView movie rows"]
-```
+| Explore | About |
+| --- | --- |
+| <img width="260" alt="Watch Explore screen showing movie rows" src="https://i.ibb.co/ysc82GW/Screenshot-1563618481.png" /> | <img width="260" alt="Watch About screen with profile links" src="https://i.ibb.co/ZmqG7Bm/Screenshot-1563618490.png" /> |
 
-## Modules
-
-| Area | Modules | Purpose |
-| --- | --- | --- |
-| App shell | `app` | Main activity, bottom navigation, and app startup. |
-| Presentation | `presentation:explore-view`, `presentation:about-view` | Feature UI, ViewModels, UI mappers, and screen tests. |
-| Domain | `domain:movies-domain` | Movie domain models and load result states. |
-| Data | `data:movies-data` | Repository, local/remote data sources, API models, and data tests. |
-| Network | `common:network-common` | Retrofit, OkHttp, Moshi, caching, and TMDb query setup. |
-| Design | `design:empty-view`, `design:error-view`, `design:one-line-row-view`, `ui-resources` | Reusable views, colors, dimensions, styles, and empty/error states. |
-| Support | `image-loader`, `intents`, `utils`, `common:tests-common`, `common:android-tests-common` | Binding adapters, explicit intents, helpers, and shared test utilities. |
-
-## Tech Stack
+## ⚙️ Tech Stack
 
 - Kotlin 1.3.41
 - Android Gradle Plugin 3.5.0 RC03
@@ -75,7 +49,7 @@ flowchart LR
 - Glide 4.9.0 and a small image-loader module
 - JUnit 4, Mockito, Espresso, AndroidX Test
 
-## Run It
+## 🚀 Run It
 
 This repo is pinned to 2019 Android tooling. For the least friction, open it
 with an Android Studio/JDK setup compatible with AGP 3.5 and Gradle 5.6 RC2.
@@ -89,7 +63,7 @@ The live flavor uses a TMDb API key that is currently hardcoded in
 `common/network-common`. Treat it as sample-era code, not as production secret
 management.
 
-## Test It
+## 🧪 Verification
 
 ```bash
 ./gradlew testLiveDebugUnitTest
@@ -99,13 +73,13 @@ management.
 The test suite covers repository fallback behavior, API/data mapping, Explore
 state transitions, About actions, utility helpers, and instrumented UI flows.
 
-## Status
+## 📌 Status
 
 Watch is a historical sample and personal playground, not an actively maintained
 production app. Its value today is as a snapshot of modular Android architecture
 patterns from the AndroidX/XML/Data Binding era.
 
-## License
+## 📜 License
 
 The original README declared this repository to be covered by the
 [MIT license](https://en.wikipedia.org/wiki/MIT_License). A standalone
