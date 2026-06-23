@@ -16,6 +16,7 @@ buildscript {
             retrofit    : '2.6.1',
             koin        : '2.0.1',
             glide       : '4.9.0',
+            coil        : '0.6.0',
             navigation  : '2.2.0-alpha01',
             room        : '2.2.0-alpha02',
             kotlin      : [
@@ -98,6 +99,9 @@ buildscript {
                     glide  : [
                             runtime : "com.github.bumptech.glide:glide:$rootProject.ext.versions.glide",
                             compiler: "com.github.bumptech.glide:compiler:$rootProject.ext.versions.glide"
+                    ],
+                    coil : [
+                            runtime : "io.coil-kt:coil:$rootProject.ext.versions.coil"
                     ],
                     truth  : "com.google.truth:truth:1.0"
             ],

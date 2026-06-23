@@ -5,6 +5,7 @@ apply from: '../scripts/android_library_module.gradle'
 dependencies {
     implementation deps.google.glide.runtime
     kapt deps.google.glide.compiler
+    implementation deps.google.coil.runtime
 
     implementation project(":utils")
     implementation project(':ui-resources')
