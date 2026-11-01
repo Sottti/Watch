@@ -1,5 +1,9 @@
 # Watch
 
+> **Historical personal project — 2019**
+> Preserved as a record of the Android ideas, tools and architecture I was
+> exploring at the time. This project is no longer actively maintained.
+
 ## Intro
 
 Welcome to the Watch app guide.
