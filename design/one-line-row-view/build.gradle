@@ -3,11 +3,11 @@ apply from: '../../scripts/build_types.gradle'
 apply from: '../../scripts/android_library_module.gradle'
 
 dependencies {
-    implementation deps.google.android.x.ui.material
     implementation deps.google.android.x.foundation.core
     implementation deps.google.android.x.ui.constraintLayout
+    implementation deps.google.android.x.ui.material
 
-    implementation project(':utils')
-    implementation project(':ui-resources')
     implementation project(':design:error-view')
+    implementation project(':ui-resources')
+    implementation project(':utils')
 }

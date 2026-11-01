@@ -5,21 +5,21 @@ apply from: '../../scripts/android_library_module.gradle'
 apply from: '../../scripts/android_test_dependencies.gradle'
 
 dependencies {
+    implementation deps.circleImageView
+    
+    implementation deps.google.android.x.architecture.lifecycle.liveData
+    implementation deps.google.android.x.architecture.lifecycle.viewModel
+    implementation deps.google.android.x.foundation.appCompat
+    implementation deps.google.android.x.ui.constraintLayout
+    implementation deps.google.android.x.ui.fragment.fragment
+    implementation deps.google.android.x.ui.material
+
     implementation deps.koin.android
     implementation deps.koin.viewModel
 
-    implementation deps.circleImageView
-
-    implementation deps.google.android.x.ui.material
-    implementation deps.google.android.x.ui.constraintLayout
-    implementation deps.google.android.x.ui.fragment.fragment
-    implementation deps.google.android.x.foundation.appCompat
-    implementation deps.google.android.x.architecture.lifecycle.viewModel
-    implementation deps.google.android.x.architecture.lifecycle.liveData
-
-    implementation project(':utils')
-    implementation project(':intents')
+    implementation project(':common:android-tests-common')
     implementation project(':common:tests-common')
     implementation project(':design:one-line-row-view')
-    implementation project(':common:android-tests-common')
+    implementation project(':intents')
+    implementation project(':utils')
 }

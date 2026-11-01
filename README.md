@@ -1,9 +1,13 @@
 # Watch
 
+> **Historical personal project — 2019**
+> Preserved as a record of the Android ideas, tools and architecture I was
+> exploring at the time. This project is no longer actively maintained.
+
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.3.41-7F52FF?logo=kotlin&logoColor=white)
 ![Android](https://img.shields.io/badge/AndroidX-API%2021%2B-3DDC84?logo=android&logoColor=white)
 ![Architecture](https://img.shields.io/badge/architecture-modular%20MVVM-4285F4)
-![Status](https://img.shields.io/badge/status-historical%20sample-FFB000)
+![Status](https://img.shields.io/badge/status-historical%20personal%20project-FFB000)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 Watch is a modular Android sample app for exploring movie discovery, app
